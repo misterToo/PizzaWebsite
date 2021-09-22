@@ -2,7 +2,9 @@
 ###Week 2
 - [ ] Create repository
 - [ ] Figure out API
-- [ ] Project Idea
+- [ ] Project Idea 
+- [ ] Opportunity Statement
+
 ###Week 4
 - [ ] Create Wireframes
 - [ ] Write User Stories
