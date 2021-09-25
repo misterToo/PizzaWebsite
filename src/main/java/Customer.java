@@ -1,14 +1,25 @@
 import javax.persistence.*;
+import org.hibernate.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity(name="Customer")
 @Table(name="customers")
 public class Customer {
+    @Column(name="first_name")
     private String fName;
+    @Column(name="last_name")
     private String lName;
+    @Column(name="email")
     private String email;
+    @Column(name="address")
     private String address;
+    @Column(name="to_next_reward")
     private int toNextReward;
+    @Column(name="rewards")
     private int rewards;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
+    @GenericGenerator(name="native",strategy = "native")
     private int ID;
 
     public Customer(){
