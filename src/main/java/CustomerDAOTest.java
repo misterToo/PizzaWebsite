@@ -39,4 +39,11 @@ class CustomerDAOTest {
         dao.delete(newCustomer);
         assertNull(dao.getByID(id));
     }
+
+    @Test
+    void getByIdSuccess(){
+        Customer newCustomer = new Customer("Dave","Flannigan","dave.f@gmail.com");
+        int id = dao.insert(newCustomer);
+        assertEquals("Dave",dao.getByID(id).getfName());
+    }
 }
