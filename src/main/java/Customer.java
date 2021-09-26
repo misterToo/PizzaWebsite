@@ -25,7 +25,11 @@ public class Customer {
     public Customer(){
 
     }
-
+    public Customer(String fName, String lName, String email){
+        this.fName = fName;
+        this.lName = lName;
+        this.email = email;
+    }
     //Getters and Setters
 
     public String getfName() {
