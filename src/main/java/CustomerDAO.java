@@ -8,9 +8,9 @@ public class CustomerDAO {
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
-    public Customer getByID(int ID){
+    public Customer getByID(int id){
         Session session = sessionFactory.openSession();
-        Customer customer = session.get(Customer.class, ID);
+        Customer customer = session.get(Customer.class, id);
         session.close();
         return customer;
     }
@@ -28,12 +28,20 @@ public class CustomerDAO {
         return customers;
 
     }
-    public int Insert (Customer customer){
+    public int insert (Customer customer){
         int id = 0;
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         id =(int)session.save(customer);
+        transaction.commit();
         session.close();
         return id;
+    }
+    public void delete(Customer customer){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(customer);
+        transaction.commit();
+        session.close();
     }
 }

@@ -13,6 +13,7 @@ class CustomerDAOTest {
 
     @BeforeEach
     void setUp(){
+
         dao = new CustomerDAO();
     }
 
@@ -25,6 +26,17 @@ class CustomerDAOTest {
     @Test
     void insertSuccess(){
         Customer newCustomer = new Customer("Dave","Flannigan","dave.f@gmail.com");
+        int id = dao.insert(newCustomer);
+        assertNotEquals(0,id);
+        Customer expectedCustomer = dao.getByID(id);
+        assertEquals("Dave", expectedCustomer.getfName());
+    }
 
+    @Test
+    void deleteSuccess(){
+        Customer newCustomer = new Customer("Dave","Flannigan","dave.f@gmail.com");
+        int id = dao.insert(newCustomer);
+        dao.delete(newCustomer);
+        assertNull(dao.getByID(id));
     }
 }
