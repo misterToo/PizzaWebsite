@@ -1,6 +1,6 @@
-#Oscar Bedford Individual Project
+# Oscar Bedford Individual Project
 
-####Problem Statement
+#### Problem Statement
 Ordering pizza on the internet should be a seamless process, as to not
 frustrate customers who may be hungry/impulsive. With smooth web design,
 we can increase the ease of ordering, and as such, the amount of orders by reducing
