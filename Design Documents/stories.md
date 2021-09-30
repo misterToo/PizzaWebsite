@@ -1,4 +1,4 @@
-#User Stories
+# User Stories
 
 ### Sign up
 As any user, I would like to create an account so keep track of rewards *
