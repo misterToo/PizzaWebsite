@@ -13,7 +13,9 @@ As a user, I would like to be able to view my account, so I can see what informa
 ### View Rewards
 As a user, I would like to see what rewards I have available *
 ### Edit Account
-As a user, I would like to edit my account in case any of my information changes
+As a user, I would like to edit my account in case any of my information changes *
+### Delete Account
+As a user, I would like to delete my account if I no longer want to associate with the restaurant *
 ### Save address
 As a user, I would like to save my address, so I don't have to enter it every time I order
 ### Log Out
