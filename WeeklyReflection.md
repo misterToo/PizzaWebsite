@@ -1,5 +1,5 @@
-#Weekly Reflection
-###Week 2
+# Weekly Reflection
+### Week 2
 Determined that I'm going to be using the Order Pizza API for my project. It's not super complicated, but it is an API, 
 and it allows me to try a project that might end up being more interesting. I'm making a website for a pizza place that
 allows for the user to accrue rewards on their account. This, I believe, should allow me to implement all the technologies

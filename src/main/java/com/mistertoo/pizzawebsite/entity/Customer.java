@@ -1,3 +1,5 @@
+package com.mistertoo.pizzawebsite.entity;
+
 import javax.persistence.*;
 import org.hibernate.*;
 import org.hibernate.annotations.GenericGenerator;

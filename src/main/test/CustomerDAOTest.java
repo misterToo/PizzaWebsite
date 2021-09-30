@@ -44,6 +44,7 @@ class CustomerDAOTest {
     void getByIdSuccess(){
         Customer newCustomer = new Customer("Dave","Flannigan","dave.f@gmail.com");
         int id = dao.insert(newCustomer);
-        assertEquals("Dave",dao.getByID(id).getfName());
+        Customer expectedCustomer = dao.getByID(id);
+        assertTrue(expectedCustomer.equals(newCustomer));
     }
 }

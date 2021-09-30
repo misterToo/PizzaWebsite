@@ -1,3 +1,6 @@
+package com.mistertoo.pizzawebsite.persistence;
+
+import com.mistertoo.pizzawebsite.entity.Customer;
 import org.apache.logging.log4j.*;
 import org.hibernate.*;
 import javax.persistence.*;
@@ -42,6 +45,12 @@ public class CustomerDAO {
         Transaction transaction = session.beginTransaction();
         session.delete(customer);
         transaction.commit();
+        session.close();
+    }
+
+    public void update(Customer customer){
+        Session session = sessionFactory.openSession();
+        session.saveOrUpdate(customer);
         session.close();
     }
 }

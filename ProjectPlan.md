@@ -1,11 +1,11 @@
-#ProjectPlan
-###Week 2
+# ProjectPlan
+### Week 2
 - [ ] Create repository
 - [ ] Figure out API
 - [ ] Project Idea 
 - [ ] Opportunity Statement
 
-###Week 4
+### Week 4
 - [ ] Create Wireframes
 - [ ] Write User Stories
 - [ ] Create Basic HTML for pages
