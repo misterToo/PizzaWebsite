@@ -10,9 +10,18 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
     @GenericGenerator(name="native",strategy = "native")
     private int ID;
+    @Column(name = "Size")
     private String size;
+    @Column(name="Toppings")
     private String toppings;
+    @Column(name = "pickup")
     private boolean pickup;
+    @Column(name = "address")
     private String address;
+    @Column(name = "CustomerID")
     private int CustomerID;
+
+    public Order(){
+
+    }
 }
