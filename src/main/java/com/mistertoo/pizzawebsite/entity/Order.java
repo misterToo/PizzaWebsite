@@ -24,4 +24,7 @@ public class Order {
     public Order(){
 
     }
+    public Order(String size, String toppings, boolean pickup, String address){
+
+    }
 }
