@@ -21,6 +21,8 @@ public class Order {
     @Column(name = "CustomerID")
     private int CustomerID;
 
+    @ManyToOne
+    private Customer customer;
     //no argument constructor
     public Order(){
 

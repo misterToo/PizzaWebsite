@@ -4,6 +4,8 @@ import javax.persistence.*;
 import org.hibernate.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.*;
+
 @Entity(name="Customer")
 @Table(name="customers")
 public class Customer {
@@ -24,6 +26,8 @@ public class Customer {
     @GenericGenerator(name="native",strategy = "native")
     private int ID;
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
     public Customer(){
 
     }

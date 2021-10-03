@@ -31,13 +31,10 @@ public class OrderDAO {
     }
     public List<Order> getAll(){
         Session session = sessionFactory.openSession();
-
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Order> query = builder.createQuery(Order.class);
         Root<Order> root = query.from(Order.class);
         List<Order> orders = session.createQuery(query).getResultList();
-
-        logger.debug("The list of Customers: " + orders);
         session.close();
         return orders;
 
