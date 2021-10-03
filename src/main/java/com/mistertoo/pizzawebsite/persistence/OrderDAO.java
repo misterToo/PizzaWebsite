@@ -9,4 +9,6 @@ import javax.persistence.criteria.*;
 import java.util.List;
 
 public class OrderDAO {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+    SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 }
