@@ -15,3 +15,10 @@ in a car accident at the end of the week, so project progress may be limited.
 8 hours
 
 Created files for checkpoint 1, not a lot of spare time this week so getting done what I can.
+
+### Week 5
+
+10 hours
+
+Completed weekly assignment, implemented the order class and database. Still struggling with test architecture. Pretty
+surprisingly far along with the back end of the website purely based on the assignments.
