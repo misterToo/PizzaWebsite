@@ -18,8 +18,8 @@ public class Order {
     private boolean pickup;
     @Column(name = "address")
     private String address;
-    @Column(name = "CustomerID")
-    private int CustomerID;
+    @Column(name = "customer_id")
+    private int customerID;
 
     @ManyToOne
     private Customer customer;
@@ -78,10 +78,10 @@ public class Order {
     }
 
     public int getCustomerID() {
-        return CustomerID;
+        return customerID;
     }
 
     public void setCustomerID(int customerID) {
-        CustomerID = customerID;
+        customerID = customerID;
     }
 }

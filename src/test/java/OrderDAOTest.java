@@ -1,12 +1,7 @@
-package test.java;
-import com.mistertoo.pizzawebsite.entity.Customer;
-import com.mistertoo.pizzawebsite.persistence.CustomerDAO;
-import com.mistertoo.pizzawebsite.persistence.OrderDAO;
+package com.mistertoo.pizzawebsite.persistence;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javax.persistence.criteria.Order;
 
 import java.util.*;
 public class OrderDAOTest {

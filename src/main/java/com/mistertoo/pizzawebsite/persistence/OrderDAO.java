@@ -1,6 +1,6 @@
 package com.mistertoo.pizzawebsite.persistence;
 
-
+import com.mistertoo.pizzawebsite.entity.Order;
 import org.apache.logging.log4j.*;
 import org.hibernate.*;
 import javax.persistence.*;
@@ -35,6 +35,7 @@ public class OrderDAO {
         CriteriaQuery<Order> query = builder.createQuery(Order.class);
         Root<Order> root = query.from(Order.class);
         List<Order> orders = session.createQuery(query).getResultList();
+        logger.debug("The list of Orders: " + orders);
         session.close();
         return orders;
 
