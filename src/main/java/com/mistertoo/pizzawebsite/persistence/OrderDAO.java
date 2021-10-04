@@ -1,5 +1,6 @@
 package com.mistertoo.pizzawebsite.persistence;
 
+import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.entity.Order;
 import org.apache.logging.log4j.*;
 import org.hibernate.*;
@@ -16,6 +17,15 @@ public class OrderDAO {
         Order order = session.get(Order.class, id);
         session.close();
         return order;
+    }
+    public int insert (Order order){
+        int id = 0;
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        id = (int)session.save(order);
+        transaction.commit();
+        session.close();
+        return id;
     }
     public void update(Order order){
         Session session = sessionFactory.openSession();
