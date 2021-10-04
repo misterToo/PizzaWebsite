@@ -9,7 +9,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
     @GenericGenerator(name="native",strategy = "native")
-    private int ID;
+    private int orderID;
     @Column(name = "Size")
     private String size;
     @Column(name="Toppings")
@@ -38,11 +38,11 @@ public class Order {
 
     //getters and setters
     public int getID() {
-        return ID;
+        return orderID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int orderID) {
+        this.orderID = orderID;
     }
 
     public String getSize() {

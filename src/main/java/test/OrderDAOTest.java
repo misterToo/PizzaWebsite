@@ -1,4 +1,8 @@
-package com.mistertoo.pizzawebsite.persistence;
+package test;
+
+
+import com.mistertoo.pizzawebsite.entity.*;
+import com.mistertoo.pizzawebsite.persistence.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

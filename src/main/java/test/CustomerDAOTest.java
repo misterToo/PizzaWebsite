@@ -1,4 +1,4 @@
-package test.java;
+package test;
 import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.persistence.CustomerDAO;
 import org.junit.jupiter.api.BeforeEach;
