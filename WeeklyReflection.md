@@ -22,3 +22,25 @@ Created files for checkpoint 1, not a lot of spare time this week so getting don
 
 Completed weekly assignment, implemented the order class and database. Still struggling with test architecture. Pretty
 surprisingly far along with the back end of the website purely based on the assignments.
+
+### Week 6
+
+5 hours
+
+Having database issues with AWS application, otherwise it's somewhat deployed. Website errors out when using AWS database
+saying that it's missing a driver class.
+
+### Week 7
+
+3 hours
+
+Got weekly assignment done, tried deploying week 2 to see if it'd run, having the same issues as pizzawebsite. Changing 
+MySQL versions didn't fix my issue at all, no progress on that front
+
+### Week 8 (week 7 part 2)
+
+2 hours
+
+As I was starting the AWS deployment, I got an email saying I was going over my AWS limits, shut down all my AWS Instances
+I don't think I can get this one done until next month. Can't troubleshoot week 6 any further either due to this issue.
+Worked on fixing project 2 checkpoint instead.

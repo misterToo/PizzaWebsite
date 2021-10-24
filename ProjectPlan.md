@@ -1,24 +1,24 @@
 # ProjectPlan
 ### Week 2
-- [ ] Create repository
-- [ ] Figure out API
-- [ ] Project Idea 
-- [ ] Opportunity Statement
+- [x] Create repository
+- [x] Figure out API
+- [x] Project Idea 
+- [x] Opportunity Statement
 
 ### Week 4
-- [ ] Create Wireframes
-- [ ] Write User Stories
+- [x] Create Wireframes
+- [x] Write User Stories
 - [ ] Create Basic HTML for pages
 - [ ] Set up Initial JSPs if time allows
-- [ ] Determine database map
+- [x] Determine database map
 ### Week 5
-- [ ] Create User Class
+- [x] Create User Class
 - [ ] Order page?
 - [ ] Test API interfacing
 
 ### Week 6
 - [ ] AWS Setup
-- [ ] Code Review
+- [x] Code Review
 
 ### Week 7
 - [ ] User Authentication

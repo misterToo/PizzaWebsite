@@ -11,17 +11,17 @@ import java.util.*;
 class CustomerDAOTest {
     CustomerDAO dao;
 
-    //@BeforeEach
+    @BeforeEach
     void setUp(){
 
         dao = new CustomerDAO();
     }
 
-    //@Test
-    //void getAllSuccess() {
-        //List<Customer> customers = dao.getAll();
-       // assertEquals(0,customers.size());
-    //}
+    @Test
+    void getAllSuccess() {
+        List<Customer> customers = dao.getAll();
+        assertEquals(0,customers.size());
+    }
 
     //@Test
     void insertSuccess(){
