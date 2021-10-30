@@ -1,7 +1,7 @@
 package com.mistertoo.pizzawebsite.persistence;
 
 import com.mistertoo.pizzawebsite.entity.Customer;
-import jdk.internal.util.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
