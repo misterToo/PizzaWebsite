@@ -19,6 +19,7 @@ public class displayCustomer extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         CustomerDAO dao = new CustomerDAO();
+        String committed = "commit";
         req.setAttribute("customers", dao.getAll());
         req.setAttribute("title", "All Customers: ");
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
