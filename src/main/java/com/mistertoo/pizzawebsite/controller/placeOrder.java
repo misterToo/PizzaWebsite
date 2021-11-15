@@ -12,13 +12,11 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/deleteAccount"}
+        urlPatterns = {"/placeOrder"}
 )
 
-public class DeleteAccount extends HttpServlet{
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+public class placeOrder extends HttpServlet{
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
     }
 }
