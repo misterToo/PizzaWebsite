@@ -11,6 +11,9 @@
     <title>Account Details</title>
 </head>
 <body>
-
+<form action="updateAccount" method="post">
+    <input type="submit">
+</form>
+    <a href="deleteAccount">Delete Account</a>
 </body>
 </html>
