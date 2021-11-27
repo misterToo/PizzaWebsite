@@ -25,7 +25,7 @@ public class GenericDaoTest {
     @Test
     void getAllCustomer(){
         List<Customer> customers = customerDAO.getAll();
-        assertEquals(7,customers.size());
+        assertEquals(9,customers.size());
     }
 
     @Test

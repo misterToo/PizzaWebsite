@@ -44,3 +44,23 @@ MySQL versions didn't fix my issue at all, no progress on that front
 As I was starting the AWS deployment, I got an email saying I was going over my AWS limits, shut down all my AWS Instances
 I don't think I can get this one done until next month. Can't troubleshoot week 6 any further either due to this issue.
 Worked on fixing project 2 checkpoint instead.
+###Week 9
+
+### Week 10
+
+Group project started, AWS Database config fixed. Wrote basic HTML pages for development purposes so I can work on functionality
+
+### Week 11
+
+Group project week, back end largely completed, api functionality and database done
+### Week 12 
+
+4 hours
+
+Group project presented, still minimal progress due to HTTPS issues.
+
+### Week 13
+
+2 hours
+
+Auth now working on local machine, week 10 exercise completed
