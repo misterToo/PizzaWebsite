@@ -1,6 +1,7 @@
 package com.mistertoo.pizzawebsite.controller;
 
 import com.mistertoo.pizzawebsite.entity.Customer;
+import com.mistertoo.pizzawebsite.entity.Order;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -17,6 +18,14 @@ import java.io.IOException;
 
 public class placeOrder extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        boolean pickup;
+        pickup = req.getParameter("pickup") == "1";
+        String address = req.getParameter("address");
+        String toppings;
+        String size = req.getParameter("size");
+        GenericDao<Order> dao = new GenericDao<>(Order.class);
+
+
 
     }
 }
