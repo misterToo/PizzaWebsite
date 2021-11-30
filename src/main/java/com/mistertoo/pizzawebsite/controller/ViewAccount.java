@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.*;
 
 @WebServlet(name = "ViewAccount", value = "/ViewAccount")
 public class ViewAccount extends HttpServlet {
@@ -15,8 +16,10 @@ public class ViewAccount extends HttpServlet {
         HttpSession session = request.getSession();
         String userName = session.getAttribute("userName").toString();
         GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+        Map<String, Object> propertyMap = new HashMap<>();
+        propertyMap.put("user_name", userName);
+        Customer currentCustomer = (Customer) dao.findByPropertyEqual(propertyMap);
 
-        dao.getByID()
 
     }
 
