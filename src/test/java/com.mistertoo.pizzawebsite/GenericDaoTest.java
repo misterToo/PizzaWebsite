@@ -21,6 +21,7 @@ public class GenericDaoTest {
     @BeforeEach
     void setUp(){
         Database database = Database.getInstance();
+        database.runSQL("dbrefresh.sql");
         orderDao = new GenericDao<>(Order.class);
         customerDAO = new GenericDao<>(Customer.class);
     }
@@ -28,7 +29,7 @@ public class GenericDaoTest {
     //@Test
     void getAllCustomer(){
         List<Customer> customers = customerDAO.getAll();
-        assertEquals(9,customers.size());
+        assertEquals(1,customers.size());
     }
 
     @Test
