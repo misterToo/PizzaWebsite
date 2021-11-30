@@ -9,10 +9,8 @@ import java.util.*;
 @Entity(name="Customer")
 @Table(name="customers")
 public class Customer {
-    @Column(name="first_name")
-    private String fName;
-    @Column(name="last_name")
-    private String lName;
+    @Column(name="user_name")
+    private String uName;
     @Column(name="email")
     private String email;
     @Column(name="address")
@@ -31,28 +29,20 @@ public class Customer {
     public Customer(){
 
     }
-    public Customer(String fName, String lName, String email){
-        this.fName = fName;
-        this.lName = lName;
+    public Customer(String uName, String email){
+        this.uName = uName;
         this.email = email;
     }
     //Getters and Setters
 
-    public String getfName() {
-        return fName;
+    public String getuName() {
+        return uName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setuName(String uName) {
+        this.uName = uName;
     }
 
-    public String getlName() {
-        return lName;
-    }
-
-    public void setlName(String lName) {
-        this.lName = lName;
-    }
 
     public String getEmail() {
         return email;
