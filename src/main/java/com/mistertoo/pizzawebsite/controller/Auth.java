@@ -150,8 +150,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // todo pick proper key from the two - it just so happens that the first one works for my case
         // Use Key's N and E
-        BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(1).getN()));
+        BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
+        logger.debug("Keys array size: " + jwks.getKeys().size());
         // TODO the following is "happy path", what if the exceptions are caught?
         // Create a public key
         PublicKey publicKey = null;

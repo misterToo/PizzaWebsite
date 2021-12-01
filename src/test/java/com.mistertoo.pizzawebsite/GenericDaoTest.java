@@ -38,7 +38,7 @@ public class GenericDaoTest {
         int id = customerDAO.insert(newCustomer);
         assertNotEquals(0,id);
         Customer expectedCustomer = customerDAO.getByID(id);
-        assertEquals("Dave", expectedCustomer.getuName());
+        assertEquals("dFlannigan", expectedCustomer.getuName());
     }
     @Test
     void deleteCustomerSuccess(){
