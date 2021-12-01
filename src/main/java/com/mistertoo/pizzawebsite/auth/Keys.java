@@ -1,15 +1,14 @@
 package com.mistertoo.pizzawebsite.auth;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Keys{
 
 	@JsonProperty("keys")
-	private List<com.mistertoo.pizzawebsite.auth.KeysItem> keys;
+	private List<KeysItem> keys;
 
-	public List<com.mistertoo.pizzawebsite.auth.KeysItem> getKeys(){
+	public List<KeysItem> getKeys(){
 		return keys;
 	}
 }

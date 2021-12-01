@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -33,9 +34,18 @@
                     <a class="nav-link" href="ViewAccount">Account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
+                    <c:choose>
+                        <c:when test="${empty userName}">
+                            <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
+                        </c:when>
+                        <c:otherwise>
+                            <h3>Welcome ${userName}</h3>
+                        </c:otherwise>
+                    </c:choose>
+
                 </li>
             </ul>
+
         </div>
     </nav>
 
