@@ -34,12 +34,6 @@ public class GenericDao<T> {
         return entity;
     }
 
-    public T getByUName(String name){
-        Session session = getSession();
-        T entity = (T) session.get(type, name);
-        session.close();
-        return entity;
-    }
 
     public void delete (T entity){
         Session session = getSession();
@@ -67,16 +61,13 @@ public class GenericDao<T> {
         session.close();
     }
 
-    public List<T> findByPropertyEqual(Map<String, Object> propertyMap){
+    public List<T> findByPropertyEqual(String propertyName, String value){
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        List<Predicate> predicates = new ArrayList<Predicate>();
-        for(Map.Entry entry : propertyMap.entrySet()){
-            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
-        }
-        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
+        query.select(root).where(builder.equal(root.get(propertyName),value));
+        session.close();
         return session.createQuery(query).getResultList();
     }
 

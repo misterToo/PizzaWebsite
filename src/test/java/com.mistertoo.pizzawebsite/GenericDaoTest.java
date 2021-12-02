@@ -35,25 +35,34 @@ public class GenericDaoTest {
 
     @Test
     void insertCustomerSuccess(){
-        Customer newCustomer = new Customer("dFlannigan","dave.f@gmail.com");
+        Customer newCustomer = new Customer("mDerek","mike.derek@gmail.com");
         int id = customerDAO.insert(newCustomer);
         assertNotEquals(0,id);
         Customer expectedCustomer = customerDAO.getByID(id);
-        assertEquals("dFlannigan", expectedCustomer.getuName());
+        assertEquals("mDerek", expectedCustomer.getuName());
     }
     @Test
     void deleteCustomerSuccess(){
-        Customer newCustomer = new Customer("dFlannigan","dave.f@gmail.com");
+        Customer newCustomer = new Customer("mBailey","mike.bailey@gmail.com");
         int id = customerDAO.insert(newCustomer);
         customerDAO.delete(newCustomer);
         assertNull(customerDAO.getByID(id));
     }
     @Test
     void getCustomerByIdSuccess(){
-        Customer newCustomer = new Customer("dFlannigan","dave.f@gmail.com");
+        Customer newCustomer = new Customer("dDave","dave.dave@gmail.com");
         int id = customerDAO.insert(newCustomer);
         Customer expectedCustomer = customerDAO.getByID(id);
         assertEquals(expectedCustomer.getuName(), newCustomer.getuName());
+    }
+
+    @Test
+    void getCustomerByUserNameSuccess(){
+        Customer newCustomer = new Customer("mFlannigan", "mary.flannigan@email.com");
+        String userName = "mFlannigan";
+        customerDAO.insert(newCustomer);
+        List<Customer> resultList = customerDAO.findByPropertyEqual("user_name",userName);
+        assertEquals(resultList.get(0).getuName(), newCustomer.getuName());
     }
     @After
     void tearDown(){
