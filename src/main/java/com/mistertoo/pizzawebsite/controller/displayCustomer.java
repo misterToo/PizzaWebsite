@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
@@ -22,8 +23,12 @@ public class displayCustomer extends HttpServlet {
         GenericDao<Customer> dao = new GenericDao<>(Customer.class);
         req.setAttribute("customers", dao.getAll());
         req.setAttribute("title", "All Customers: ");
+        HttpSession session = req.getSession(false);
+        req.setAttribute("userName", session.getAttribute("userName"));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
+
+
     }
 
 }

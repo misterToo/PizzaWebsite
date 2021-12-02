@@ -39,7 +39,7 @@
                             <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
                         </c:when>
                         <c:otherwise>
-                            <h3>Welcome ${userName}</h3>
+                            <p class="nav-item">Signed in as ${userName}</p>
                         </c:otherwise>
                     </c:choose>
 
