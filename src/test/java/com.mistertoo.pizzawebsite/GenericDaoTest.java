@@ -4,6 +4,7 @@ import com.mistertoo.pizzawebsite.entity.*;
 import com.mistertoo.pizzawebsite.persistence.*;
 import com.mistertoo.pizzawebsite.test.util.Database;
 import org.hibernate.annotations.GenericGenerator;
+import org.junit.After;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,5 +54,9 @@ public class GenericDaoTest {
         int id = customerDAO.insert(newCustomer);
         Customer expectedCustomer = customerDAO.getByID(id);
         assertEquals(expectedCustomer.getuName(), newCustomer.getuName());
+    }
+    @After
+    void tearDown(){
+
     }
 }

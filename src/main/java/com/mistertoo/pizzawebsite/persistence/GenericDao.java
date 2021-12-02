@@ -34,6 +34,13 @@ public class GenericDao<T> {
         return entity;
     }
 
+    public T getByUName(String name){
+        Session session = getSession();
+        T entity = (T) session.get(type, name);
+        session.close();
+        return entity;
+    }
+
     public void delete (T entity){
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
