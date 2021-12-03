@@ -22,28 +22,32 @@
                     <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="order.jsp">Order</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="displayCustomer">Display Customers (temp)</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ViewAccount">Account</a>
-                </li>
-                <li class="nav-item">
                     <c:choose>
                         <c:when test="${empty userName}">
-                            <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
+                            <li class="nav-item">
+                                <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
+                            </li>
+
                         </c:when>
                         <c:otherwise>
-                            <p class="nav-item">Signed in as ${userName}</p>
+                            <li class="nav-item">
+                                <a class="nav-link" href="order.jsp">Order</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="ViewAccount">Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <p class="nav-link">Signed in as ${userName}</p>
+                            </li>
                         </c:otherwise>
                     </c:choose>
 
-                </li>
+
             </ul>
 
         </div>

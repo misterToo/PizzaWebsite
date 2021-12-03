@@ -17,13 +17,19 @@ public class ViewAccount extends HttpServlet {
         String userName = session.getAttribute("userName").toString();
         GenericDao<Customer> dao = new GenericDao<>(Customer.class);
         Map<String, Object> propertyMap = new HashMap<>();
-        propertyMap.put("user_name", userName);
-//
-  //      request.setAttribute("userName", currentCustomer.getuName());
- //       request.setAttribute("rewards",currentCustomer.getRewards());
- //       request.setAttribute("email",currentCustomer.getEmail());
-//        request.setAttribute("address",currentCustomer.getAddress());
-//
+        propertyMap.put("uName", userName);
+
+        Customer currentCustomer = dao.findByPropertyEqual(propertyMap).get(0);
+
+        request.setAttribute("userName", currentCustomer.getuName());
+        request.setAttribute("rewards",currentCustomer.getRewards());
+        request.setAttribute("email",currentCustomer.getEmail());
+        request.setAttribute("address",currentCustomer.getAddress());
+
+        //TODO recent orders
+        //TODO Update account
+        //TODO Delete Account
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/accountdetails.jsp");
         dispatcher.forward(request, response);
     }

@@ -25,19 +25,16 @@
                     <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="order.jsp">Order</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="displayCustomer">Display Customers (temp)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ViewAccount">Account</a>
+                    <a class="nav-link" href="order.jsp">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success my-2 my-sm-0" href="logIn">Sign Up/Log In</a>
+                    <a class="nav-link" href="ViewAccount">Account</a>
                 </li>
             </ul>
         </div>
@@ -61,6 +58,36 @@
         <input type="text" name="address" id="address">
         <fieldset>
             <legend>Toppings</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="pepperoni" name="toppings" id="pepperoni">
+                <label class="form-check-label" for="pepperoni">
+                    Pepperoni
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Sausage" name="toppings" id="sausage">
+                <label class="form-check-label" for="sausage">
+                    Sausage
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="olives" name="toppings" id="olives">
+                <label class="form-check-label" for="olives">
+                    Olives
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="onions" name="toppings" id="onions">
+                <label class="form-check-label" for="onions">
+                    Onions
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="mushrooms" name="toppings" id="mushrooms">
+                <label class="form-check-label" for="mushrooms">
+                    Mushrooms
+                </label>
+            </div>
         </fieldset>
         <fieldset>
             <legend>Size</legend>

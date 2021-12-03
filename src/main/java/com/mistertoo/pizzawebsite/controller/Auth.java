@@ -7,6 +7,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mistertoo.pizzawebsite.auth.*;
+import com.mistertoo.pizzawebsite.entity.Customer;
+import com.mistertoo.pizzawebsite.persistence.GenericDao;
 import com.mistertoo.pizzawebsite.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -58,7 +60,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     Keys jwks;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
-
+    GenericDao<Customer> dao = new GenericDao<>(Customer.class);
     @Override
     public void init() throws ServletException {
         super.init();
@@ -88,6 +90,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
                 session.setAttribute("userName",userName);
+                Map<String,Object> propertyMap = new HashMap<>();
+                propertyMap.put("uName", userName);
+                if(dao.findByPropertyEqual(propertyMap).size()==0){
+                    Customer newCustomer = new Customer(userName,"");
+                    dao.insert(newCustomer);
+                }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
@@ -98,6 +106,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 dispatcher.forward(req, resp);
             }
         }
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
 
@@ -173,8 +182,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
         String userName = jwt.getClaim("cognito:username").asString();
+        String email = jwt.getClaim("cognito:email_verified").asString();
         logger.debug("here's the username: " + userName);
-
+        logger.debug("here's the email: " + email);
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
         // TODO decide what you want to do with the info!

@@ -61,13 +61,16 @@ public class GenericDao<T> {
         session.close();
     }
 
-    public List<T> findByPropertyEqual(String propertyName, String value){
+    public List<T> findByPropertyEqual(Map<String, Object> propertyMap){
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        query.select(root).where(builder.equal(root.get(propertyName),value));
-        session.close();
+        List<Predicate> predicates = new ArrayList<Predicate>();
+        for(Map.Entry entry : propertyMap.entrySet()){
+            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
+        }
+        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
         return session.createQuery(query).getResultList();
     }
 

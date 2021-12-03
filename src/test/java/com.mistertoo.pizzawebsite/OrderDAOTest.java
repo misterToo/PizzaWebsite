@@ -26,18 +26,18 @@ public class OrderDAOTest {
     }
 
     //@Test
-    void insertSuccess(){
-        Order newOrder = new Order("Small","Sausage",true, "pickup");
-        int id = dao.insert(newOrder);
-        assertNotEquals(0,id);
-        Order expectedOrder = dao.getByOrderID(id);
-        assertEquals("Small",expectedOrder.getSize());
-    }
+    //void insertSuccess(){
+       // Order newOrder = new Order("Small","Sausage",true, "pickup");
+       // int id = dao.insert(newOrder);
+       // assertNotEquals(0,id);
+       // Order expectedOrder = dao.getByOrderID(id);
+       // assertEquals("Small",expectedOrder.getSize());
+ //   }
     //@Test
-    void deleteSuccess(){
-        Order newOrder = new Order("Small","Sausage",true, "pickup");
-        int id = dao.insert(newOrder);
-        dao.delete(newOrder);
-        assertNull(dao.getByOrderID((id)));
-    }
+   // void deleteSuccess(){
+    //    Order newOrder = new Order("Small","Sausage",true, "pickup");
+    //    int id = dao.insert(newOrder);
+    //    dao.delete(newOrder);
+    //    assertNull(dao.getByOrderID((id)));
+   // }
 }
