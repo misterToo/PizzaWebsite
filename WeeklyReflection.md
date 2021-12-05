@@ -64,3 +64,13 @@ Group project presented, still minimal progress due to HTTPS issues.
 2 hours
 
 Auth now working on local machine, week 10 exercise completed
+
+### Week 14
+
+20 hours
+
+HTTPS working, Auth deployed on AWS, order page written, view account page written, delete account page written, log out
+functionality written, problems with API interfacing but the code is written for it. Orders linked to account now show up 
+on account page. Generic DAO problem fixed so that it closes sessions. This is probably the most productive week I've
+had yet, the program is now starting to look like a program, you can navigate between pages seamlessly and log in an out
+without a hitch.

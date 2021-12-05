@@ -17,17 +17,17 @@
 - [x] Test API interfacing
 
 ### Week 6
-- [ ] AWS Setup
+- [x] AWS Setup
 - [x] Code Review
 
 ### Week 7
-- [ ] ~~User Authentication~~
+- [x] ~~User Authentication~~
 
 ### Week 8
 - [ ] REST Consumption
 
 ### Week 9 
-- [ ] login page creation
+- [x] login page creation
 
 ### Week 10
 - [x] Write rewards page functionality
@@ -35,7 +35,7 @@
 - [ ] Write about us page
 
 ### Week 11
-- [ ] Write order page functionality
+- [x] Write order page functionality
 - [ ] write menu page
 - [x] write signup 
 

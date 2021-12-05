@@ -37,7 +37,7 @@
                             <p class="nav-link">Signed in as ${userName}</p>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-outline-success my-2 my-sm-0" href="logOut">Log out</a>
+                            <a class="btn btn-outline-danger my-2 my-sm-0" href="logOut">Log out</a>
                         </li>
                     </c:otherwise>
                 </c:choose>
