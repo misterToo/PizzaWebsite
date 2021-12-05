@@ -59,12 +59,12 @@ public class placeOrder extends HttpServlet{
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
 
         for(int i = 0; i<toppings.size();i++){
-            allToppings += toppings.get(i) + "";
+            allToppings += toppings.get(i) + " ";
         }
 
         Order newOrder = new Order(size,allToppings,pickup,address,orderCustomer.getID());
         orderDao.insert(newOrder);
-
+        /**
         if(toppings.contains("Sausage")){
             Client client = ClientBuilder.newClient();
             calories += getKcal(sausageID, client);
@@ -87,7 +87,7 @@ public class placeOrder extends HttpServlet{
             Client client = ClientBuilder.newClient();
             calories += getKcal(mushroomID,client);
         }
-
+        **/
         req.setAttribute("Calories",calories);
 
         //redirect
