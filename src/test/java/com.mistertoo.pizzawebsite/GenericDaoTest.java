@@ -59,7 +59,7 @@ public class GenericDaoTest {
     }
     @Test
     void getCustomerByIdSuccess(){
-        Customer newCustomer = new Customer("bDave","dave.dave@gmail.com");
+        Customer newCustomer = new Customer("bDave","bave.dave@gmail.com");
         int id = customerDAO.insert(newCustomer);
         Customer expectedCustomer = customerDAO.getByID(id);
         assertEquals(expectedCustomer.getuName(), newCustomer.getuName());

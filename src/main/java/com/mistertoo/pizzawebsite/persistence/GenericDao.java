@@ -36,7 +36,8 @@ public class GenericDao<T> {
 
 
     public void delete (T entity){
-        Session session = getSession();
+        Session session = null;
+        session = getSession();
         Transaction transaction = session.beginTransaction();
         session.delete(entity);
         transaction.commit();
@@ -45,7 +46,8 @@ public class GenericDao<T> {
 
     public Integer insert(T entity){
         Integer id = 0;
-        Session session = getSession();
+        Session session = null;
+        session = getSession();
         Transaction transaction = session.beginTransaction();
         id =(Integer) session.save(entity);
         transaction.commit();
@@ -71,7 +73,10 @@ public class GenericDao<T> {
             predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
         }
         query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
-        return session.createQuery(query).getResultList();
+        List<T> resultList = session.createQuery(query).getResultList();
+        session.close();
+        return resultList;
+
     }
 
     private Session getSession(){
