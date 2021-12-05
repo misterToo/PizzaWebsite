@@ -63,8 +63,20 @@
         <li>User Name: ${userName}</li>
         <li>Email: ${email} </li>
         <li>address: ${address}</li>
-        <li>Points to next reward : ${rewards}</li>
+        <li>Rewards available : ${rewards}</li>
+        <li>To Next Reward: ${toNextReward}</li>
     </ul>
+    <h2>Recent Orders</h2>
+    <table class="table table-bordered">
+        <tr><th>Size</th><th>Toppings</th></tr>
+        <c:forEach items="${orders}" var="order">
+            <tr>
+
+                <td>${order.size}</td>
+                <td>${order.toppings}</td>
+            </tr>
+        </c:forEach>
+    </table>
     <a href="deleteAccount">Delete Account</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

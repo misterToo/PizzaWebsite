@@ -78,7 +78,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
-        String userName = null;
+        String[] returns = new String[2];
         HttpSession session = req.getSession(true);
         if (authCode == null) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
@@ -87,13 +87,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse);
-                req.setAttribute("userName", userName);
-                session.setAttribute("userName",userName);
+                returns = validate(tokenResponse);
+                req.setAttribute("userName", returns[0]);
+                session.setAttribute("userName",returns[0]);
                 Map<String,Object> propertyMap = new HashMap<>();
-                propertyMap.put("uName", userName);
+                propertyMap.put("uName", returns[0]);
                 if(dao.findByPropertyEqual(propertyMap).size()==0){
-                    Customer newCustomer = new Customer(userName,"");
+                    Customer newCustomer = new Customer(returns[0],returns[1]);
                     dao.insert(newCustomer);
                 }
             } catch (IOException e) {
@@ -144,7 +144,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * @return
      * @throws IOException
      */
-    private String validate(TokenResponse tokenResponse) throws IOException {
+    private String[] validate(TokenResponse tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
         loadKey();
@@ -182,15 +182,17 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
         String userName = jwt.getClaim("cognito:username").asString();
-        String email = jwt.getClaim("cognito:email_verified").asString();
+        String email = jwt.getClaim("email").asString();
         logger.debug("here's the username: " + userName);
         logger.debug("here's the email: " + email);
         logger.debug("here are all the available claims: " + jwt.getClaims());
-
+        String[] returns = new String[2];
+        returns[0] = userName;
+        returns[1] = email;
         // TODO decide what you want to do with the info!
         // for now, I'm just returning username for display back to the browser
 
-        return userName;
+        return returns;
     }
 
     /** Create the auth url and use it to build the request.

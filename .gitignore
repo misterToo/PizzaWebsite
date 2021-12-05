@@ -1,2 +1,3 @@
 !/src/main/.ebextensions/https-instance-single.config
 !/src/main/resources/cognito.properties
+!/src/main/.ebextensions/https-instance.config

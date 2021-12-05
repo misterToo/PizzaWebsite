@@ -19,12 +19,12 @@
   </c:choose>
 </h2>
 <table class="table table-bordered">
-  <tr><th>First Name</th><th>Last Name</th></tr>
+  <tr><th>User Name</th><th>Email</th></tr>
   <c:forEach items="${customers}" var="customer">
     <tr>
 
       <td>${customer.uName}</td>
-      <td></td>
+      <td>${customer.email}</td>
     </tr>
   </c:forEach>
 </table>

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestServiceClient {
     Logger logger = LogManager.getLogger(this.getClass());
-    @Test
+    //@Test
     public void testswapiJSON() throws Exception {
         Client client = ClientBuilder.newClient();
         WebTarget target =
