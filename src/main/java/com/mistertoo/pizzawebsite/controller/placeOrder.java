@@ -43,6 +43,7 @@ public class placeOrder extends HttpServlet{
         String size = req.getParameter("size");
         toppings = Arrays.asList(req.getParameterValues("toppings"));
         int calories = 0;
+        double price = 0;
         GenericDao<Order> orderDao = new GenericDao<>(Order.class);
         GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
         String pepperoniID = "5052004649513";
@@ -52,18 +53,44 @@ public class placeOrder extends HttpServlet{
         String sausageID ="07203660021";
         logger.debug(toppings.toString());
 
+
+        //Get current customer from session
         HttpSession session = req.getSession(false);
         String userName = (String) session.getAttribute("userName");
         Map<String,Object> propertyMap = new HashMap<>();
         propertyMap.put("uName", userName);
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
 
-        for(int i = 0; i<toppings.size();i++){
-            allToppings += toppings.get(i) + " ";
+        //calculate price
+        if(size=="small"){
+            price += 7.95;
+        } else if (size=="medium"){
+            price += 9.95;
+        } else if (size == "large"){
+            price += 10.95;
         }
 
+        if(pickup){
+            price += 4.95;
+        }
+        //calculate toppings price and toppings database field
+        for(int i = 0; i<toppings.size();i++){
+            allToppings += toppings.get(i) + " ";
+            price += 2;
+        }
+        if(price>= orderCustomer.getToNextReward()){
+            orderCustomer.setToNextReward(100);
+            orderCustomer.setRewards(orderCustomer.getRewards() + 10);
+        } else{
+            orderCustomer.setToNextReward((int) (orderCustomer.getToNextReward() - price));
+        }
+
+        customerDAO.saveOrUpdate(orderCustomer);
+        //insert order
         Order newOrder = new Order(size,allToppings,pickup,address,orderCustomer.getID());
         orderDao.insert(newOrder);
+
+        //get topping calorie values from API
         /**
         if(toppings.contains("Sausage")){
             Client client = ClientBuilder.newClient();
@@ -88,9 +115,11 @@ public class placeOrder extends HttpServlet{
             calories += getKcal(mushroomID,client);
         }
         **/
+        //set attributes for thank you page
+        req.setAttribute("price", price);
         req.setAttribute("Calories",calories);
 
-        //redirect
+        //redirect to thank you page
         RequestDispatcher dispatcher = req.getRequestDispatcher("/orderthanks.jsp");
         dispatcher.forward(req, resp);
 

@@ -2,10 +2,11 @@ package com.mistertoo.pizzawebsite.entity;
 
 import javax.persistence.*;
 
+
+@Entity(name="address")
 @Table(name = "addresses", indexes = {
         @Index(name = "customerID_idx", columnList = "customerID")
 })
-@Entity
 public class Address {
     @Id
     @Column(name = "AddressID", nullable = false)
@@ -15,7 +16,9 @@ public class Address {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "customerID")
+    @JoinColumn(name = "customerID", referencedColumnName = "ID")
+
+
     private Customer customerID;
 
     public Customer getCustomerID() {

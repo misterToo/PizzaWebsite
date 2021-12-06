@@ -9,13 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet(
         urlPatterns = {"/updateAccount"}
 )
 public class UpdateAccount extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-
+        GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+        HttpSession session = req.getSession(false);
+        String userName = (String) session.getAttribute("userName");
+        Map<String,Object> propertyMap = new HashMap<>();
+        propertyMap.put("uName", userName);
+        Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
     }
 }

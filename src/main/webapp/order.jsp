@@ -26,11 +26,13 @@
                 <label for="pickupno">No:</label>
                 <input type="radio" id="pickupno" name="pickup" value="0"><br>
             </div>
+            <p>Delivery Fee 4.95</p>
         </fieldset>
-        <label for="address">Address:</label>
+        <label for="address">Address (Not Required for Pickup):</label>
         <input type="text" name="address" id="address">
         <fieldset>
-            <legend>Toppings</legend>
+            <legend>Toppings<br> All Toppings $2.00</legend>
+
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="pepperoni" name="toppings" id="pepperoni">
                 <label class="form-check-label" for="pepperoni">
@@ -56,6 +58,12 @@
                 </label>
             </div>
             <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="ham" name="toppings" id="ham">
+                <label class="form-check-label" for="ham">
+                    Ham
+                </label>
+            </div>
+            <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="mushrooms" name="toppings" id="mushrooms">
                 <label class="form-check-label" for="mushrooms">
                     Mushrooms
@@ -66,15 +74,15 @@
             <legend>Size</legend>
             <div class="form-check">
                 <input type="radio" id="sizesmall" name="size" value="small">
-                <label for="sizesmall">Small</label><br>
+                <label for="sizesmall">Small - $7.95</label><br>
             </div>
             <div class="form-check">
                 <input type="radio" id="sizemedium" name="size" value="medium">
-                <label for="sizemedium">Medium</label><br>
+                <label for="sizemedium">Medium - $9.95</label><br>
             </div>
             <div class="form-check">
                 <input type="radio" id="sizelarge" name="size" value="large">
-                <label for="sizelarge">Large</label><br>
+                <label for="sizelarge">Large - $10.95</label><br>
             </div>
         </fieldset>
         <input type="submit">

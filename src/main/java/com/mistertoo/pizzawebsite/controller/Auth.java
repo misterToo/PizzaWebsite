@@ -94,6 +94,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 propertyMap.put("uName", returns[0]);
                 if(dao.findByPropertyEqual(propertyMap).size()==0){
                     Customer newCustomer = new Customer(returns[0],returns[1]);
+                    newCustomer.setToNextReward(100);
                     dao.insert(newCustomer);
                 }
             } catch (IOException e) {

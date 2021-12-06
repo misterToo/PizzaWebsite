@@ -11,5 +11,6 @@
         <property name="hibernate.c3p0.idle_test_period">3000</property>
         <mapping class="com.mistertoo.pizzawebsite.entity.Customer"/>
         <mapping class="com.mistertoo.pizzawebsite.entity.Order"/>
+        <mapping class="com.mistertoo.pizzawebsite.entity.Address"/>
     </session-factory>
 </hibernate-configuration>

@@ -16,13 +16,7 @@
 <jsp:include page="header.jsp" />.
 <body>
     <form action="updateAccount" method="post">
-        <label for="fname">First Name</label>
-        <input type ="text" name="fname" id="fname">
-        <label for="lname">Last Name</label>
-        <input type="text" name="lname" id="lname">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email">
-        <label for="address">Address</label>
+        <label for="address">New Address</label>
         <input type="text" name="address" id="address">
         <input type="submit">
     </form>

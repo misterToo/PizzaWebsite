@@ -20,7 +20,7 @@
     <ul>
         <li>User Name: ${userName}</li>
         <li>Email: ${email} </li>
-        <li>address: ${address}</li>
+        <li>address: ${address} <a href="updateaccount.jsp">Update Address</a></li>
         <li>Rewards available : ${rewards}</li>
         <li>To Next Reward: ${toNextReward}</li>
     </ul>
