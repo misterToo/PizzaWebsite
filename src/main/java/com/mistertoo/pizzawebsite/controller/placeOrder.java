@@ -114,7 +114,7 @@ public class placeOrder extends HttpServlet{
         orderDao.insert(newOrder);
 
         //get topping calorie values from API
-        /**
+
         if(toppings.contains("Sausage")){
             Client client = ClientBuilder.newClient();
             calories += getKcal(sausageID, client);
@@ -137,7 +137,7 @@ public class placeOrder extends HttpServlet{
             Client client = ClientBuilder.newClient();
             calories += getKcal(mushroomID,client);
         }
-        **/
+
 
         price = price - rewardsUsed;
         //set attributes for thank you page
