@@ -3,6 +3,7 @@ package com.mistertoo.pizzawebsite.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 
 @Entity(name="address")
@@ -20,6 +21,7 @@ public class Address {
     private String address;
 
     @Column(name = "customerID")
+    @NotNull
     private  int customerID;
 
     @ManyToOne

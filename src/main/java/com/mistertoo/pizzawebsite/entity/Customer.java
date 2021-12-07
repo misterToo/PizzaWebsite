@@ -1,6 +1,8 @@
 package com.mistertoo.pizzawebsite.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -13,6 +15,7 @@ import java.util.*;
 @Table(name="customers")
 public class Customer {
     @Column(name="user_name")
+    @NotNull
     private String uName;
     @Column(name="email")
     private String email;

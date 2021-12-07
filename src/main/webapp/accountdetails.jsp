@@ -26,10 +26,10 @@
     <h2>Addresses</h2>
     <table class="table table-bordered">
         <tr><th>Address</th></tr>
-        <c:forEach items="${adresses}" var="adress">
+        <c:forEach items="${addresses}" var="object">
             <tr>
 
-                <td>${adress.adress}</td>
+                <td>${object.address}</td>
             </tr>
         </c:forEach>
     </table>

@@ -1,5 +1,7 @@
 package com.mistertoo.pizzawebsite.entity;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -14,14 +16,17 @@ public class Order {
     @GenericGenerator(name="native",strategy = "native")
     private int orderID;
     @Column(name = "Size")
+    @NotNull
     private String size;
     @Column(name="Toppings")
     private String toppings;
     @Column(name = "pickup")
+    @NotNull
     private boolean pickup;
     @Column(name = "address")
     private String address;
     @Column(name = "customer_id")
+    @NotNull
     private int customerID;
 
     @ManyToOne

@@ -30,7 +30,11 @@
             <p>Delivery Fee 4.95</p>
         </fieldset>
         <label for="address">Address (Not Required for Pickup):</label>
-        <input type="text" name="address" id="address">
+        <select name="address" id="address">
+            <c:forEach items="${sessionScope.addresses}" var="address">
+                <option value="${address.address}">${address.address}</option>
+            </c:forEach>
+        </select>
         <fieldset>
             <legend>Toppings<br> All Toppings $2.00</legend>
 

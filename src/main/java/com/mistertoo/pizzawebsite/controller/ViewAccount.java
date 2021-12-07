@@ -19,7 +19,7 @@ public class ViewAccount extends HttpServlet {
         String userName = session.getAttribute("userName").toString();
         GenericDao<Customer> dao = new GenericDao<>(Customer.class);
         GenericDao<Order> orderDao = new GenericDao<Order>(Order.class);
-        GenericDao<Address> adressDao = new GenericDao<>(Address.class);
+        GenericDao<Address> addressDao = new GenericDao<>(Address.class);
         Map<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("uName", userName);
         Map<String, Object> orderPropertyMap = new HashMap<>();
@@ -35,8 +35,8 @@ public class ViewAccount extends HttpServlet {
 
         Map<String, Object> propertyMapAddress = new HashMap<>();
         propertyMapAddress.put("customerID", currentCustomer.getID());
-        List<Address> adresses = adressDao.findByPropertyEqual(propertyMapAddress);
-        request.setAttribute("addresses", adresses);
+        List<Address> addresses = addressDao.findByPropertyEqual(propertyMapAddress);
+        request.setAttribute("addresses", addresses);
 
 
 

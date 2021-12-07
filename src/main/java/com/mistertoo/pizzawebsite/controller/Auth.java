@@ -7,6 +7,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mistertoo.pizzawebsite.auth.*;
+import com.mistertoo.pizzawebsite.entity.Address;
 import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
 import com.mistertoo.pizzawebsite.util.*;
@@ -61,6 +62,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+    GenericDao<Address> adressDAO = new GenericDao<>(Address.class);
     @Override
     public void init() throws ServletException {
         super.init();
@@ -98,8 +100,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     dao.insert(newCustomer);
                 }else{
                   int rewards = dao.findByPropertyEqual(propertyMap).get(0).getRewards();
+                    Map<String,Object> adressPropertyMap = new HashMap<>();
+                    propertyMap.put("customerID",dao.findByPropertyEqual(propertyMap).get(0).getID());
                     session.setAttribute("rewards",rewards);
+                    session.setAttribute("addresses",adressDAO.findByPropertyEqual(adressPropertyMap));
                 }
+
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
