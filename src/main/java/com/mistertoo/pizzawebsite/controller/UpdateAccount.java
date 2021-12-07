@@ -1,4 +1,5 @@
 package com.mistertoo.pizzawebsite.controller;
+import com.mistertoo.pizzawebsite.entity.Address;
 import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
 import org.json.HTTP;
@@ -20,10 +21,20 @@ import java.util.Map;
 public class UpdateAccount extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+        GenericDao<Address> addressDAO = new GenericDao<>(Address.class);
         HttpSession session = req.getSession(false);
         String userName = (String) session.getAttribute("userName");
         Map<String,Object> propertyMap = new HashMap<>();
         propertyMap.put("uName", userName);
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
+        String newAddress = req.getParameter("address");
+        Address address = new Address();
+        address.setAddress(newAddress);
+        address.setCustomerID(orderCustomer.getID());
+        addressDAO.insert(address);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        dispatcher.forward(req, resp);
+
     }
 }

@@ -1,4 +1,5 @@
 DELETE FROM customer.orders;
+DELETE FROM customer.addresses;
 DELETE FROM customer.customers;
 
 

@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GenericDaoTest {
     GenericDao<Order> orderDao;
     GenericDao<Customer> customerDAO ;
+    GenericDao<Address> addressDAO;
 
     @BeforeEach
     void setUp(){
@@ -25,6 +26,7 @@ public class GenericDaoTest {
         database.runSQL("dbrefresh.sql");
         orderDao = new GenericDao<>(Order.class);
         customerDAO = new GenericDao<>(Customer.class);
+        addressDAO = new GenericDao<>(Address.class);
     }
 
     @Test
@@ -75,6 +77,36 @@ public class GenericDaoTest {
         List<Customer> resultList = customerDAO.findByPropertyEqual(propertyMap);
         assertEquals(resultList.get(0).getuName(), newCustomer.getuName());
     }
+    @Test
+    void insertAddressSuccess(){
+        String userName = "dFlannigan";
+        Map<String,Object> propertyMap = new HashMap<>();
+        propertyMap.put("uName",userName);
+        Customer resultCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
+        Address address = new Address();
+        address.setAddress("39 Angeles Crest Hwy");
+        address.setCustomerID(resultCustomer.getID());
+        int id = addressDAO.insert(address);
+        Address expected = addressDAO.getByID(id);
+        assertEquals(address.getAddress(),expected.getAddress());
+    }
+
+    @Test
+    void findAddressByCustomerIDTest(){
+        String userName = "dFlannigan";
+        Map<String,Object> propertyMap = new HashMap<>();
+        propertyMap.put("uName",userName);
+        Customer resultCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
+        Address address = new Address();
+        address.setAddress("39 Angeles Crest Hwy");
+        address.setCustomerID(resultCustomer.getID());
+        int id = addressDAO.insert(address);
+        propertyMap = new HashMap<>();
+        propertyMap.put("customerID",resultCustomer.getID());
+        Address resultAddress = addressDAO.findByPropertyEqual(propertyMap).get(0);
+        assertEquals(address.getAddress(),resultAddress.getAddress());
+    }
+
     @After
     void tearDown(){
 

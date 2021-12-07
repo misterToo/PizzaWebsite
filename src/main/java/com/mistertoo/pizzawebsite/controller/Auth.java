@@ -96,6 +96,9 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                     Customer newCustomer = new Customer(returns[0],returns[1]);
                     newCustomer.setToNextReward(100);
                     dao.insert(newCustomer);
+                }else{
+                  int rewards = dao.findByPropertyEqual(propertyMap).get(0).getRewards();
+                    session.setAttribute("rewards",rewards);
                 }
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);

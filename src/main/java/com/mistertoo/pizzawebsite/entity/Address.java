@@ -1,5 +1,7 @@
 package com.mistertoo.pizzawebsite.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 
@@ -10,22 +12,25 @@ import javax.persistence.*;
 public class Address {
     @Id
     @Column(name = "AddressID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
+    @GenericGenerator(name="native",strategy = "native")
     private Integer id;
 
     @Column(name = "address", length = 45)
     private String address;
 
+    @Column(name = "customerID")
+    private  int customerID;
+
     @ManyToOne
-    @JoinColumn(name = "customerID", referencedColumnName = "ID")
+    @JoinColumn(name = "customerID", referencedColumnName = "ID", insertable = false,updatable = false)
+    private Customer customer;
 
-
-    private Customer customerID;
-
-    public Customer getCustomerID() {
+    public int getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(Customer customerID) {
+    public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
 

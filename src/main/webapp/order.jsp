@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,7 +21,7 @@
             <legend>Order for Pickup?:</legend>
             <div class="form-check">
                 <label for="pickupyes">Yes:</label>
-                <input type="radio" id="pickupyes" name="pickup" value="1"><br>
+                <input type="radio" id="pickupyes" name="pickup" value="1" required><br>
             </div>
             <div class="form-check">
                 <label for="pickupno">No:</label>
@@ -73,7 +74,7 @@
         <fieldset>
             <legend>Size</legend>
             <div class="form-check">
-                <input type="radio" id="sizesmall" name="size" value="small">
+                <input type="radio" id="sizesmall" name="size" value="small" required>
                 <label for="sizesmall">Small - $7.95</label><br>
             </div>
             <div class="form-check">
@@ -84,7 +85,17 @@
                 <input type="radio" id="sizelarge" name="size" value="large">
                 <label for="sizelarge">Large - $10.95</label><br>
             </div>
-        </fieldset>
+        </fieldset><br>
+        <c:choose>
+            <c:when test="${sessionScope.rewards == 0}">
+
+            </c:when>
+            <c:otherwise>
+                <p>Rewards Available: $${sessionScope.rewards}</p>
+                <label for="rewardsUsed">Use Rewards:</label>
+                <input type="number" min="0" max="${sessionScope.rewards}" id="rewardsUsed" name="rewardsUsed" value="0"><br>
+            </c:otherwise>
+        </c:choose>
         <input type="submit">
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

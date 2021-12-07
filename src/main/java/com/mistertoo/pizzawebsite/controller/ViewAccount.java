@@ -1,5 +1,6 @@
 package com.mistertoo.pizzawebsite.controller;
 
+import com.mistertoo.pizzawebsite.entity.Address;
 import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.entity.Order;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
@@ -18,6 +19,7 @@ public class ViewAccount extends HttpServlet {
         String userName = session.getAttribute("userName").toString();
         GenericDao<Customer> dao = new GenericDao<>(Customer.class);
         GenericDao<Order> orderDao = new GenericDao<Order>(Order.class);
+        GenericDao<Address> adressDao = new GenericDao<>(Address.class);
         Map<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("uName", userName);
         Map<String, Object> orderPropertyMap = new HashMap<>();
@@ -28,15 +30,19 @@ public class ViewAccount extends HttpServlet {
         request.setAttribute("userName", currentCustomer.getuName());
         request.setAttribute("rewards",currentCustomer.getRewards());
         request.setAttribute("email",currentCustomer.getEmail());
-        request.setAttribute("address",currentCustomer.getAddress());
         request.setAttribute("toNextReward", currentCustomer.getToNextReward());
         request.setAttribute("orders", orderDao.findByPropertyEqual(orderPropertyMap));
 
+        Map<String, Object> propertyMapAddress = new HashMap<>();
+        propertyMapAddress.put("customerID", currentCustomer.getID());
+        List<Address> adresses = adressDao.findByPropertyEqual(propertyMapAddress);
+        request.setAttribute("addresses", adresses);
 
 
-        //TODO recent orders
+
+
         //TODO Update account
-        //TODO Delete Account
+
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/accountdetails.jsp");
         dispatcher.forward(request, response);

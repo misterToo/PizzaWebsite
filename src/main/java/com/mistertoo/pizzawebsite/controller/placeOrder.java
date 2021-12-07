@@ -35,17 +35,31 @@ import java.util.*;
 public class placeOrder extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         Logger logger = LogManager.getLogger(this.getClass());
-        boolean pickup;
-        pickup = req.getParameter("pickup") == "1";
-        String address = req.getParameter("address");
-        List<String> toppings;
-        String allToppings = "";
-        String size = req.getParameter("size");
-        toppings = Arrays.asList(req.getParameterValues("toppings"));
-        int calories = 0;
-        double price = 0;
         GenericDao<Order> orderDao = new GenericDao<>(Order.class);
         GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+
+        //get form data
+        boolean pickup;
+        pickup = Objects.equals(req.getParameter("pickup"), "1");
+        String address = req.getParameter("address");
+        List<String> toppings = new ArrayList<>();
+
+        int rewardsUsed;
+        if(req.getParameterValues("rewardsUsed") != null){
+             rewardsUsed =Integer.parseInt(req.getParameter("rewardsUsed"));
+        }else{
+            rewardsUsed = 0;
+        }
+
+        String allToppings = "";
+        String size = req.getParameter("size");
+        if(req.getParameterValues("toppings") != null) {
+            toppings = Arrays.asList(req.getParameterValues("toppings"));
+        }
+        int calories = 0;
+        int price = 0;
+
+
         String pepperoniID = "5052004649513";
         String mushroomID ="3222471027325";
         String onionID ="20242305";
@@ -62,25 +76,34 @@ public class placeOrder extends HttpServlet{
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
 
         //calculate price
-        if(size=="small"){
-            price += 7.95;
-        } else if (size=="medium"){
-            price += 9.95;
-        } else if (size == "large"){
-            price += 10.95;
+        if(Objects.equals(size, "small")){
+            price += 8;
+        } else if (Objects.equals(size, "medium")){
+            price += 10;
+        } else if (Objects.equals(size, "large")){
+            price += 11;
         }
 
-        if(pickup){
-            price += 4.95;
+        if(!pickup){
+            price += 5;
         }
+
         //calculate toppings price and toppings database field
         for(int i = 0; i<toppings.size();i++){
             allToppings += toppings.get(i) + " ";
             price += 2;
         }
+
+        //rewards calculations
+        if(rewardsUsed>0){
+            orderCustomer.setRewards(orderCustomer.getRewards() - rewardsUsed);
+            session.setAttribute("rewards",orderCustomer.getRewards());
+        }
+
         if(price>= orderCustomer.getToNextReward()){
             orderCustomer.setToNextReward(100);
             orderCustomer.setRewards(orderCustomer.getRewards() + 10);
+            session.setAttribute("rewards",orderCustomer.getRewards());
         } else{
             orderCustomer.setToNextReward((int) (orderCustomer.getToNextReward() - price));
         }
@@ -115,6 +138,8 @@ public class placeOrder extends HttpServlet{
             calories += getKcal(mushroomID,client);
         }
         **/
+
+        price = price - rewardsUsed;
         //set attributes for thank you page
         req.setAttribute("price", price);
         req.setAttribute("Calories",calories);

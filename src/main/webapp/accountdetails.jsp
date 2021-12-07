@@ -20,10 +20,20 @@
     <ul>
         <li>User Name: ${userName}</li>
         <li>Email: ${email} </li>
-        <li>address: ${address} <a href="updateaccount.jsp">Update Address</a></li>
-        <li>Rewards available : ${rewards}</li>
-        <li>To Next Reward: ${toNextReward}</li>
+        <li>Rewards available : $${rewards}</li>
+        <li>To Next Reward: ${toNextReward} Points</li>
     </ul>
+    <h2>Addresses</h2>
+    <table class="table table-bordered">
+        <tr><th>Address</th></tr>
+        <c:forEach items="${adresses}" var="adress">
+            <tr>
+
+                <td>${adress.adress}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    <a href="updateaccount.jsp" class="btn btn-outline-success my-2 my-sm-0">Add Address</a>
     <h2>Recent Orders</h2>
     <table class="table table-bordered">
         <tr><th>Size</th><th>Toppings</th></tr>
