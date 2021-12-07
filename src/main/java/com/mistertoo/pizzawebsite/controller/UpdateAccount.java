@@ -32,7 +32,9 @@ public class UpdateAccount extends HttpServlet {
         address.setAddress(newAddress);
         address.setCustomerID(orderCustomer.getID());
         addressDAO.insert(address);
-
+        Map<String,Object> addressPropertyMap = new HashMap<>();
+        addressPropertyMap.put("customerID",orderCustomer.getID());
+        session.setAttribute("addresses",addressDAO.findByPropertyEqual(addressPropertyMap));
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
 
