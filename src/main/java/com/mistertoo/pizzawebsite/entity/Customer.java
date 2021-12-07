@@ -1,6 +1,8 @@
 package com.mistertoo.pizzawebsite.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.*;
@@ -22,8 +24,11 @@ public class Customer {
     @Column(name="address")
     private String address;
     @Column(name="to_next_reward")
+    @Min(0)
+    @Max(100)
     private int toNextReward;
     @Column(name="rewards")
+    @Min(0)
     private int rewards;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
