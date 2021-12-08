@@ -20,6 +20,7 @@ public class Customer {
     @NotNull
     private String uName;
     @Column(name="email")
+    @NotNull
     private String email;
     @Column(name="address")
     private String address;

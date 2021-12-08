@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mistertoo.pizzawebsite.auth.*;
 import com.mistertoo.pizzawebsite.entity.Address;
 import com.mistertoo.pizzawebsite.entity.Customer;
+import com.mistertoo.pizzawebsite.entity.Order;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
 import com.mistertoo.pizzawebsite.util.*;
 import org.apache.logging.log4j.LogManager;
@@ -22,6 +23,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import java.io.*;
 import java.math.BigInteger;
 import java.net.URI;
@@ -79,6 +84,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
         String authCode = req.getParameter("code");
         String[] returns = new String[2];
         HttpSession session = req.getSession(true);
@@ -90,16 +97,35 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
                 returns = validate(tokenResponse);
+
+                //add username to session and request
                 req.setAttribute("userName", returns[0]);
                 session.setAttribute("userName",returns[0]);
+
+                //properties for database search
                 Map<String,Object> propertyMap = new HashMap<>();
                 propertyMap.put("uName", returns[0]);
+
+                //check if user is already in DB
                 if(dao.findByPropertyEqual(propertyMap).size()==0){
+                    //if user not in DB, add them with the data from cognito, and the default parameters
                     Customer newCustomer = new Customer(returns[0],returns[1]);
                     newCustomer.setToNextReward(100);
+
+                    //validate before inserting into the database
+                    try{
+                        Set<ConstraintViolation<Customer>> customerConstraintViolations = validator.validate(newCustomer);
+                        if(customerConstraintViolations.size()>0){
+                            throw new Exception("constraints failed to validate creating a new user in db (auth)");
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //finally, insert the customer into the database
                     dao.insert(newCustomer);
                 }else{
-                  int rewards = dao.findByPropertyEqual(propertyMap).get(0).getRewards();
+                    //if customer already exists, grab any info about them from the DB and put it into the session
+                    int rewards = dao.findByPropertyEqual(propertyMap).get(0).getRewards();
                     Map<String,Object> adressPropertyMap = new HashMap<>();
                     propertyMap.put("customerID",dao.findByPropertyEqual(propertyMap).get(0).getID());
                     session.setAttribute("rewards",rewards);

@@ -7,8 +7,11 @@ import com.mistertoo.pizzawebsite.entity.Customer;
 import com.mistertoo.pizzawebsite.entity.Nutriments;
 import com.mistertoo.pizzawebsite.entity.Order;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
+import com.sun.xml.bind.v2.runtime.reflect.opt.Const;
+import jdk.jfr.StackTrace;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.glassfish.jersey.internal.inject.Custom;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +20,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpSession;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -34,6 +41,9 @@ import java.util.*;
 
 public class placeOrder extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        //Create utilities
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
         Logger logger = LogManager.getLogger(this.getClass());
         GenericDao<Order> orderDao = new GenericDao<>(Order.class);
         GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
@@ -44,6 +54,7 @@ public class placeOrder extends HttpServlet{
         String address = req.getParameter("address");
         List<String> toppings = new ArrayList<>();
 
+        //get rewards used, requires null check for parseint
         int rewardsUsed;
         if(req.getParameterValues("rewardsUsed") != null){
              rewardsUsed =Integer.parseInt(req.getParameter("rewardsUsed"));
@@ -51,6 +62,7 @@ public class placeOrder extends HttpServlet{
             rewardsUsed = 0;
         }
 
+        //create order object vars
         String allToppings = "";
         String size = req.getParameter("size");
         if(req.getParameterValues("toppings") != null) {
@@ -59,7 +71,7 @@ public class placeOrder extends HttpServlet{
         int calories = 0;
         int price = 0;
 
-
+        //set vars for API calorie query
         String pepperoniID = "5052004649513";
         String mushroomID ="3222471027325";
         String onionID ="20242305";
@@ -88,7 +100,7 @@ public class placeOrder extends HttpServlet{
             price += 5;
         }
 
-        //calculate toppings price and toppings database field
+        //calculate toppings price and toppings database field, and create all toppings field
         for(int i = 0; i<toppings.size();i++){
             allToppings += toppings.get(i) + " ";
             price += 2;
@@ -107,11 +119,23 @@ public class placeOrder extends HttpServlet{
         } else{
             orderCustomer.setToNextReward((int) (orderCustomer.getToNextReward() - price));
         }
-
-        customerDAO.saveOrUpdate(orderCustomer);
-        //insert order
         Order newOrder = new Order(size,allToppings,pickup,address,orderCustomer.getID());
+
+        //validate objects before insertion
+        try{
+            Set<ConstraintViolation<Customer>> customerConstraintViolations = validator.validate(orderCustomer);
+            Set<ConstraintViolation<Order>> orderConstraintViolations = validator.validate(newOrder);
+            if(customerConstraintViolations.size()>0 || orderConstraintViolations.size() >0){
+                throw new Exception("constraints failed to validate when placing order");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //insert order and customer
         orderDao.insert(newOrder);
+        customerDAO.saveOrUpdate(orderCustomer);
 
         //get topping calorie values from API
 

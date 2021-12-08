@@ -9,7 +9,8 @@
 
 </head>
 <jsp:include page="header.jsp" />.
-<body>
+<body class="container">
+<div class="col-md-12">
 <h2>
   <c:choose>
     <c:when test="${empty userName}">
@@ -32,6 +33,7 @@
     </tr>
   </c:forEach>
 </table>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
