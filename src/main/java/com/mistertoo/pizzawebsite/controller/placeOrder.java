@@ -96,9 +96,20 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
         propertyMap.put("uName", userName);
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
 
+
+        String pepperoniID = "5052004649513";
+        String mushroomID ="3222471027325";
+        String onionID ="20242305";
+        String oliveID ="0053800950020";
+        String sausageID ="07203660021";
+        String doughID = "5060291110029";
+
+
+
         //calculate price and pizza dough calories
         Client client = ClientBuilder.newClient();
-        int doughCalories = getKcal(foodProperties.getProperty("doughID"),client);
+        int doughCalories = getKcal(doughID,client);
+
         if(Objects.equals(size, "small")){
             calories += (doughCalories * .75);
             price += 8;
@@ -113,6 +124,11 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
         if(!pickup){
             price += 5;
         }
+
+
+
+
+
 
         //calculate toppings price and toppings database field, and create all toppings field
         for(int i = 0; i<toppings.size();i++){
@@ -155,25 +171,25 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
 
         if(toppings.contains("Sausage")){
             client = ClientBuilder.newClient();
-            calories += getKcal(foodProperties.getProperty("sausageID"), client);
+            calories += getKcal(sausageID, client);
 
         }
         if(toppings.contains("pepperoni")){
             client = ClientBuilder.newClient();
-            calories += getKcal(foodProperties.getProperty("pepperoniID"),client);
+            calories += getKcal(pepperoniID,client);
 
         }
         if(toppings.contains("olives")){
             client = ClientBuilder.newClient();
-            calories += getKcal(foodProperties.getProperty("oliveID"),client);
+            calories += getKcal(oliveID,client);
         }
         if(toppings.contains("onions")){
             client = ClientBuilder.newClient();
-            calories += getKcal(foodProperties.getProperty("onionID"),client);
+            calories += getKcal(onionID,client);
         }
         if(toppings.contains("mushrooms")){
             client = ClientBuilder.newClient();
-            calories += getKcal(foodProperties.getProperty("mushroomID"),client);
+            calories += getKcal(mushroomID,client);
         }
 
 

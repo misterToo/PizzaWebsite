@@ -36,6 +36,18 @@ public class GenericDaoTest {
     }
 
     @Test
+    void getAllOrder(){
+        List<Order> orders = orderDao.getAll();
+        assertEquals(0,orders.size());
+    }
+
+    @Test
+    void getAllAddress(){
+        List<Address> addresses = addressDAO.getAll();
+        assertEquals(0,addresses.size());
+    }
+
+    @Test
     void insertCustomerSuccess(){
         Customer newCustomer = new Customer("mDerek","mike.derek@gmail.com");
         int id = customerDAO.insert(newCustomer);
@@ -52,6 +64,21 @@ public class GenericDaoTest {
         Order expectedOrder = orderDao.getByID(id);
         assertEquals("small",expectedOrder.getSize());
     }
+
+    @Test
+    void insertAddressSuccess(){
+        String userName = "dFlannigan";
+        Map<String,Object> propertyMap = new HashMap<>();
+        propertyMap.put("uName",userName);
+        Customer resultCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
+        Address address = new Address();
+        address.setAddress("39 Angeles Crest Hwy");
+        address.setCustomerID(resultCustomer.getID());
+        int id = addressDAO.insert(address);
+        Address expected = addressDAO.getByID(id);
+        assertEquals(address.getAddress(),expected.getAddress());
+    }
+
     @Test
     void deleteCustomerSuccess(){
         Customer newCustomer = new Customer("mBailey","mike.bailey@gmail.com");
@@ -59,6 +86,7 @@ public class GenericDaoTest {
         customerDAO.delete(newCustomer);
         assertNull(customerDAO.getByID(id));
     }
+
     @Test
     void getCustomerByIdSuccess(){
         Customer newCustomer = new Customer("bDave","bave.dave@gmail.com");
@@ -77,19 +105,7 @@ public class GenericDaoTest {
         List<Customer> resultList = customerDAO.findByPropertyEqual(propertyMap);
         assertEquals(resultList.get(0).getuName(), newCustomer.getuName());
     }
-    @Test
-    void insertAddressSuccess(){
-        String userName = "dFlannigan";
-        Map<String,Object> propertyMap = new HashMap<>();
-        propertyMap.put("uName",userName);
-        Customer resultCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
-        Address address = new Address();
-        address.setAddress("39 Angeles Crest Hwy");
-        address.setCustomerID(resultCustomer.getID());
-        int id = addressDAO.insert(address);
-        Address expected = addressDAO.getByID(id);
-        assertEquals(address.getAddress(),expected.getAddress());
-    }
+
 
     @Test
     void findAddressByCustomerIDTest(){
@@ -105,6 +121,17 @@ public class GenericDaoTest {
         propertyMap.put("customerID",resultCustomer.getID());
         Address resultAddress = addressDAO.findByPropertyEqual(propertyMap).get(0);
         assertEquals(address.getAddress(),resultAddress.getAddress());
+    }
+    @Test
+    void updateCustomer(){
+        String userName = "dFlannigan";
+        Map<String,Object> propertyMap = new HashMap<>();
+        propertyMap.put("uName",userName);
+        Customer resultCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
+        int id = resultCustomer.getID();
+        resultCustomer.setEmail("DFLANNIGAN@DFLANNIGAN.ORG");
+        customerDAO.saveOrUpdate(resultCustomer);
+        assertEquals(resultCustomer.getEmail(),customerDAO.getByID(id).getEmail());
     }
 
     @After
