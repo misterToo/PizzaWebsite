@@ -3,6 +3,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Production system.
+ */
 public class ProductionSystem{
 
 	@JsonProperty("warning")
@@ -14,15 +17,30 @@ public class ProductionSystem{
 	@JsonProperty("labels")
 	private List<Object> labels;
 
-	public String getWarning(){
+    /**
+     * Get warning string.
+     *
+     * @return the string
+     */
+    public String getWarning(){
 		return warning;
 	}
 
-	public int getValue(){
+    /**
+     * Get value int.
+     *
+     * @return the int
+     */
+    public int getValue(){
 		return value;
 	}
 
-	public List<Object> getLabels(){
+    /**
+     * Get labels list.
+     *
+     * @return the list
+     */
+    public List<Object> getLabels(){
 		return labels;
 	}
 }

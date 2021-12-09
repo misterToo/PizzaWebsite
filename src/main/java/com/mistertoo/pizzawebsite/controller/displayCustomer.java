@@ -12,19 +12,31 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Display all customers servlet
+ */
 @WebServlet(
         urlPatterns = {"/displayCustomer"}
 )
 
 public class displayCustomer extends HttpServlet {
+    /**
+     * Customer DAO
+     */
+    GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+        //grab all customers frmo database
         req.setAttribute("customers", dao.getAll());
         req.setAttribute("title", "All Customers: ");
+
+        //grab logged in username from session
         HttpSession session = req.getSession(false);
         req.setAttribute("userName", session.getAttribute("userName"));
+
+        //redirect to results page
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
         dispatcher.forward(req, resp);
 

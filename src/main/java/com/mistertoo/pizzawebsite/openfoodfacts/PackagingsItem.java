@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Packagings item.
+ */
 public class PackagingsItem{
 
 	@JsonProperty("shape")
@@ -16,19 +19,39 @@ public class PackagingsItem{
 	@JsonProperty("ecoscore_material_score")
 	private int ecoscoreMaterialScore;
 
-	public String getShape(){
+    /**
+     * Get shape string.
+     *
+     * @return the string
+     */
+    public String getShape(){
 		return shape;
 	}
 
-	public String getMaterial(){
+    /**
+     * Get material string.
+     *
+     * @return the string
+     */
+    public String getMaterial(){
 		return material;
 	}
 
-	public String getEcoscoreShapeRatio(){
+    /**
+     * Get ecoscore shape ratio string.
+     *
+     * @return the string
+     */
+    public String getEcoscoreShapeRatio(){
 		return ecoscoreShapeRatio;
 	}
 
-	public int getEcoscoreMaterialScore(){
+    /**
+     * Get ecoscore material score int.
+     *
+     * @return the int
+     */
+    public int getEcoscoreMaterialScore(){
 		return ecoscoreMaterialScore;
 	}
 }

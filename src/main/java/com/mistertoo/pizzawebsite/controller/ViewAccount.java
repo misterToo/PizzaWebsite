@@ -11,20 +11,37 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * View Account Servlet
+ */
 @WebServlet(name = "ViewAccount", value = "/ViewAccount")
 public class ViewAccount extends HttpServlet {
+
+    /**
+     * Customer Dao.
+     */
+    GenericDao<Customer> dao = new GenericDao<>(Customer.class);
+    /**
+     * Order dao.
+     */
+    GenericDao<Order> orderDao = new GenericDao<Order>(Order.class);
+    /**
+     * Address dao.
+     */
+    GenericDao<Address> addressDao = new GenericDao<>(Address.class);
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //util vars
         HttpSession session = request.getSession();
         String userName = session.getAttribute("userName").toString();
-        GenericDao<Customer> dao = new GenericDao<>(Customer.class);
-        GenericDao<Order> orderDao = new GenericDao<Order>(Order.class);
-        GenericDao<Address> addressDao = new GenericDao<>(Address.class);
+
+        //DB search criteria
         Map<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("uName", userName);
         Map<String, Object> orderPropertyMap = new HashMap<>();
 
-
+        //grabs customer from DB and puts the attributes into the request
         Customer currentCustomer = dao.findByPropertyEqual(propertyMap).get(0);
         orderPropertyMap.put("customerID", currentCustomer.getID());
         request.setAttribute("userName", currentCustomer.getuName());
@@ -38,18 +55,9 @@ public class ViewAccount extends HttpServlet {
         List<Address> addresses = addressDao.findByPropertyEqual(propertyMapAddress);
         request.setAttribute("addresses", addresses);
 
-
-
-
-        //TODO Update account
-
-
+        //forward to results page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/accountdetails.jsp");
         dispatcher.forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Org database usda.
+ */
 public class OrgDatabaseUsda{
 
 	@JsonProperty("fdc_data_source")
@@ -22,27 +25,57 @@ public class OrgDatabaseUsda{
 	@JsonProperty("modified_date")
 	private String modifiedDate;
 
-	public String getFdcDataSource(){
+    /**
+     * Get fdc data source string.
+     *
+     * @return the string
+     */
+    public String getFdcDataSource(){
 		return fdcDataSource;
 	}
 
-	public String getFdcCategory(){
+    /**
+     * Get fdc category string.
+     *
+     * @return the string
+     */
+    public String getFdcCategory(){
 		return fdcCategory;
 	}
 
-	public String getAvailableDate(){
+    /**
+     * Get available date string.
+     *
+     * @return the string
+     */
+    public String getAvailableDate(){
 		return availableDate;
 	}
 
-	public String getFdcId(){
+    /**
+     * Get fdc id string.
+     *
+     * @return the string
+     */
+    public String getFdcId(){
 		return fdcId;
 	}
 
-	public String getPublicationDate(){
+    /**
+     * Get publication date string.
+     *
+     * @return the string
+     */
+    public String getPublicationDate(){
 		return publicationDate;
 	}
 
-	public String getModifiedDate(){
+    /**
+     * Get modified date string.
+     *
+     * @return the string
+     */
+    public String getModifiedDate(){
 		return modifiedDate;
 	}
 }

@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Transportation scores.
+ */
 public class TransportationScores{
 
 	@JsonProperty("de")
@@ -190,251 +193,561 @@ public class TransportationScores{
 	@JsonProperty("tr")
 	private int tr;
 
-	public int getDe(){
+    /**
+     * Get de int.
+     *
+     * @return the int
+     */
+    public int getDe(){
 		return de;
 	}
 
-	public int getPs(){
+    /**
+     * Get ps int.
+     *
+     * @return the int
+     */
+    public int getPs(){
 		return ps;
 	}
 
-	public int getPt(){
+    /**
+     * Get pt int.
+     *
+     * @return the int
+     */
+    public int getPt(){
 		return pt;
 	}
 
-	public int getDk(){
+    /**
+     * Get dk int.
+     *
+     * @return the int
+     */
+    public int getDk(){
 		return dk;
 	}
 
-	public int getLt(){
+    /**
+     * Get lt int.
+     *
+     * @return the int
+     */
+    public int getLt(){
 		return lt;
 	}
 
-	public int getLu(){
+    /**
+     * Get lu int.
+     *
+     * @return the int
+     */
+    public int getLu(){
 		return lu;
 	}
 
-	public int getHr(){
+    /**
+     * Get hr int.
+     *
+     * @return the int
+     */
+    public int getHr(){
 		return hr;
 	}
 
-	public int getLv(){
+    /**
+     * Get lv int.
+     *
+     * @return the int
+     */
+    public int getLv(){
 		return lv;
 	}
 
-	public int getUa(){
+    /**
+     * Get ua int.
+     *
+     * @return the int
+     */
+    public int getUa(){
 		return ua;
 	}
 
-	public int getHu(){
+    /**
+     * Get hu int.
+     *
+     * @return the int
+     */
+    public int getHu(){
 		return hu;
 	}
 
-	public int getLy(){
+    /**
+     * Get ly int.
+     *
+     * @return the int
+     */
+    public int getLy(){
 		return ly;
 	}
 
-	public int getMa(){
+    /**
+     * Get ma int.
+     *
+     * @return the int
+     */
+    public int getMa(){
 		return ma;
 	}
 
-	public int getDz(){
+    /**
+     * Get dz int.
+     *
+     * @return the int
+     */
+    public int getDz(){
 		return dz;
 	}
 
-	public int getMc(){
+    /**
+     * Get mc int.
+     *
+     * @return the int
+     */
+    public int getMc(){
 		return mc;
 	}
 
-	public int getUk(){
+    /**
+     * Get uk int.
+     *
+     * @return the int
+     */
+    public int getUk(){
 		return uk;
 	}
 
-	public int getMd(){
+    /**
+     * Get md int.
+     *
+     * @return the int
+     */
+    public int getMd(){
 		return md;
 	}
 
-	public int getMe(){
+    /**
+     * Get me int.
+     *
+     * @return the int
+     */
+    public int getMe(){
 		return me;
 	}
 
-	public int getIe(){
+    /**
+     * Get ie int.
+     *
+     * @return the int
+     */
+    public int getIe(){
 		return ie;
 	}
 
-	public int getMk(){
+    /**
+     * Get mk int.
+     *
+     * @return the int
+     */
+    public int getMk(){
 		return mk;
 	}
 
-	public int getUs(){
+    /**
+     * Get us int.
+     *
+     * @return the int
+     */
+    public int getUs(){
 		return us;
 	}
 
-	public int getEe(){
+    /**
+     * Get ee int.
+     *
+     * @return the int
+     */
+    public int getEe(){
 		return ee;
 	}
 
-	public int getEg(){
+    /**
+     * Get eg int.
+     *
+     * @return the int
+     */
+    public int getEg(){
 		return eg;
 	}
 
-	public int getAd(){
+    /**
+     * Get ad int.
+     *
+     * @return the int
+     */
+    public int getAd(){
 		return ad;
 	}
 
-	public int getIl(){
+    /**
+     * Get il int.
+     *
+     * @return the int
+     */
+    public int getIl(){
 		return il;
 	}
 
-	public int getIm(){
+    /**
+     * Get im int.
+     *
+     * @return the int
+     */
+    public int getIm(){
 		return im;
 	}
 
-	public int getMt(){
+    /**
+     * Get mt int.
+     *
+     * @return the int
+     */
+    public int getMt(){
 		return mt;
 	}
 
-	public int getIs(){
+    /**
+     * Get is int.
+     *
+     * @return the int
+     */
+    public int getIs(){
 		return is;
 	}
 
-	public int getAl(){
+    /**
+     * Get al int.
+     *
+     * @return the int
+     */
+    public int getAl(){
 		return al;
 	}
 
-	public int getIt(){
+    /**
+     * Get it int.
+     *
+     * @return the int
+     */
+    public int getIt(){
 		return it;
 	}
 
-	public int getVa(){
+    /**
+     * Get va int.
+     *
+     * @return the int
+     */
+    public int getVa(){
 		return va;
 	}
 
-	public int getEs(){
+    /**
+     * Get es int.
+     *
+     * @return the int
+     */
+    public int getEs(){
 		return es;
 	}
 
-	public int getAt(){
+    /**
+     * Get at int.
+     *
+     * @return the int
+     */
+    public int getAt(){
 		return at;
 	}
 
-	public int getAx(){
+    /**
+     * Get ax int.
+     *
+     * @return the int
+     */
+    public int getAx(){
 		return ax;
 	}
 
-	public int getJe(){
+    /**
+     * Get je int.
+     *
+     * @return the int
+     */
+    public int getJe(){
 		return je;
 	}
 
-	public int getRo(){
+    /**
+     * Get ro int.
+     *
+     * @return the int
+     */
+    public int getRo(){
 		return ro;
 	}
 
-	public int getNl(){
+    /**
+     * Get nl int.
+     *
+     * @return the int
+     */
+    public int getNl(){
 		return nl;
 	}
 
-	public int getBa(){
+    /**
+     * Get ba int.
+     *
+     * @return the int
+     */
+    public int getBa(){
 		return ba;
 	}
 
-	public int getNo(){
+    /**
+     * Get no int.
+     *
+     * @return the int
+     */
+    public int getNo(){
 		return no;
 	}
 
-	public int getRs(){
+    /**
+     * Get rs int.
+     *
+     * @return the int
+     */
+    public int getRs(){
 		return rs;
 	}
 
-	public int getBe(){
+    /**
+     * Get be int.
+     *
+     * @return the int
+     */
+    public int getBe(){
 		return be;
 	}
 
-	public int getFi(){
+    /**
+     * Get fi int.
+     *
+     * @return the int
+     */
+    public int getFi(){
 		return fi;
 	}
 
-	public int getBg(){
+    /**
+     * Get bg int.
+     *
+     * @return the int
+     */
+    public int getBg(){
 		return bg;
 	}
 
-	public int getFo(){
+    /**
+     * Get fo int.
+     *
+     * @return the int
+     */
+    public int getFo(){
 		return fo;
 	}
 
-	public int getFr(){
+    /**
+     * Get fr int.
+     *
+     * @return the int
+     */
+    public int getFr(){
 		return fr;
 	}
 
-	public int getSe(){
+    /**
+     * Get se int.
+     *
+     * @return the int
+     */
+    public int getSe(){
 		return se;
 	}
 
-	public int getSi(){
+    /**
+     * Get si int.
+     *
+     * @return the int
+     */
+    public int getSi(){
 		return si;
 	}
 
-	public int getSj(){
+    /**
+     * Get sj int.
+     *
+     * @return the int
+     */
+    public int getSj(){
 		return sj;
 	}
 
-	public int getSk(){
+    /**
+     * Get sk int.
+     *
+     * @return the int
+     */
+    public int getSk(){
 		return sk;
 	}
 
-	public int getSm(){
+    /**
+     * Get sm int.
+     *
+     * @return the int
+     */
+    public int getSm(){
 		return sm;
 	}
 
-	public int getGg(){
+    /**
+     * Get gg int.
+     *
+     * @return the int
+     */
+    public int getGg(){
 		return gg;
 	}
 
-	public int getGi(){
+    /**
+     * Get gi int.
+     *
+     * @return the int
+     */
+    public int getGi(){
 		return gi;
 	}
 
-	public int getCh(){
+    /**
+     * Get ch int.
+     *
+     * @return the int
+     */
+    public int getCh(){
 		return ch;
 	}
 
-	public int getSy(){
+    /**
+     * Get sy int.
+     *
+     * @return the int
+     */
+    public int getSy(){
 		return sy;
 	}
 
-	public int getGr(){
+    /**
+     * Get gr int.
+     *
+     * @return the int
+     */
+    public int getGr(){
 		return gr;
 	}
 
-	public int getXk(){
+    /**
+     * Get xk int.
+     *
+     * @return the int
+     */
+    public int getXk(){
 		return xk;
 	}
 
-	public int getCy(){
+    /**
+     * Get cy int.
+     *
+     * @return the int
+     */
+    public int getCy(){
 		return cy;
 	}
 
-	public int getLb(){
+    /**
+     * Get lb int.
+     *
+     * @return the int
+     */
+    public int getLb(){
 		return lb;
 	}
 
-	public int getCz(){
+    /**
+     * Get cz int.
+     *
+     * @return the int
+     */
+    public int getCz(){
 		return cz;
 	}
 
-	public int getTn(){
+    /**
+     * Get tn int.
+     *
+     * @return the int
+     */
+    public int getTn(){
 		return tn;
 	}
 
-	public int getPl(){
+    /**
+     * Get pl int.
+     *
+     * @return the int
+     */
+    public int getPl(){
 		return pl;
 	}
 
-	public int getLi(){
+    /**
+     * Get li int.
+     *
+     * @return the int
+     */
+    public int getLi(){
 		return li;
 	}
 
-	public int getTr(){
+    /**
+     * Get tr int.
+     *
+     * @return the int
+     */
+    public int getTr(){
 		return tr;
 	}
 }

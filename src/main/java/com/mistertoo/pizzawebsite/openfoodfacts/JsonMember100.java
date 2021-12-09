@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Json member 100.
+ */
 public class JsonMember100{
 
 	@JsonProperty("w")
@@ -10,11 +13,21 @@ public class JsonMember100{
 	@JsonProperty("h")
 	private int H;
 
-	public int getW(){
+    /**
+     * Get w int.
+     *
+     * @return the int
+     */
+    public int getW(){
 		return W;
 	}
 
-	public int getH(){
+    /**
+     * Get h int.
+     *
+     * @return the int
+     */
+    public int getH(){
 		return H;
 	}
 }

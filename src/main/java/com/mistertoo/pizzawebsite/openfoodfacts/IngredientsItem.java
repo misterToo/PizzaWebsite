@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Ingredients item.
+ */
 public class IngredientsItem{
 
 	@JsonProperty("percent_max")
@@ -34,43 +37,93 @@ public class IngredientsItem{
 	@JsonProperty("processing")
 	private String processing;
 
-	public int getPercentMax(){
+    /**
+     * Get percent max int.
+     *
+     * @return the int
+     */
+    public int getPercentMax(){
 		return percentMax;
 	}
 
-	public double getPercentMin(){
+    /**
+     * Get percent min double.
+     *
+     * @return the double
+     */
+    public double getPercentMin(){
 		return percentMin;
 	}
 
-	public double getPercentEstimate(){
+    /**
+     * Get percent estimate double.
+     *
+     * @return the double
+     */
+    public double getPercentEstimate(){
 		return percentEstimate;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public String getText(){
+    /**
+     * Get text string.
+     *
+     * @return the string
+     */
+    public String getText(){
 		return text;
 	}
 
-	public String getVegetarian(){
+    /**
+     * Get vegetarian string.
+     *
+     * @return the string
+     */
+    public String getVegetarian(){
 		return vegetarian;
 	}
 
-	public String getVegan(){
+    /**
+     * Get vegan string.
+     *
+     * @return the string
+     */
+    public String getVegan(){
 		return vegan;
 	}
 
-	public int getRank(){
+    /**
+     * Get rank int.
+     *
+     * @return the int
+     */
+    public int getRank(){
 		return rank;
 	}
 
-	public String getHasSubIngredients(){
+    /**
+     * Get has sub ingredients string.
+     *
+     * @return the string
+     */
+    public String getHasSubIngredients(){
 		return hasSubIngredients;
 	}
 
-	public String getProcessing(){
+    /**
+     * Get processing string.
+     *
+     * @return the string
+     */
+    public String getProcessing(){
 		return processing;
 	}
 }

@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Response.
+ */
 public class Response{
 
 	@JsonProperty("product")
@@ -16,19 +19,39 @@ public class Response{
 	@JsonProperty("status")
 	private int status;
 
-	public Product getProduct(){
+    /**
+     * Get product product.
+     *
+     * @return the product
+     */
+    public Product getProduct(){
 		return product;
 	}
 
-	public String getCode(){
+    /**
+     * Get code string.
+     *
+     * @return the string
+     */
+    public String getCode(){
 		return code;
 	}
 
-	public String getStatusVerbose(){
+    /**
+     * Get status verbose string.
+     *
+     * @return the string
+     */
+    public String getStatusVerbose(){
 		return statusVerbose;
 	}
 
-	public int getStatus(){
+    /**
+     * Get status int.
+     *
+     * @return the int
+     */
+    public int getStatus(){
 		return status;
 	}
 }

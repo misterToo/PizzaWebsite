@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Missing.
+ */
 public class Missing{
 
 	@JsonProperty("packagings")
@@ -13,15 +16,30 @@ public class Missing{
 	@JsonProperty("labels")
 	private int labels;
 
-	public int getPackagings(){
+    /**
+     * Get packagings int.
+     *
+     * @return the int
+     */
+    public int getPackagings(){
 		return packagings;
 	}
 
-	public int getAgbCategory(){
+    /**
+     * Get agb category int.
+     *
+     * @return the int
+     */
+    public int getAgbCategory(){
 		return agbCategory;
 	}
 
-	public int getLabels(){
+    /**
+     * Get labels int.
+     *
+     * @return the int
+     */
+    public int getLabels(){
 		return labels;
 	}
 }

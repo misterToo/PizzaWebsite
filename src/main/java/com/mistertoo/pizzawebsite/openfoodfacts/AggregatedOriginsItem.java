@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Aggregated origins item.
+ */
 public class AggregatedOriginsItem{
 
 	@JsonProperty("origin")
@@ -10,11 +13,21 @@ public class AggregatedOriginsItem{
 	@JsonProperty("percent")
 	private int percent;
 
-	public String getOrigin(){
+    /**
+     * Get origin string.
+     *
+     * @return the string
+     */
+    public String getOrigin(){
 		return origin;
 	}
 
-	public int getPercent(){
+    /**
+     * Get percent int.
+     *
+     * @return the int
+     */
+    public int getPercent(){
 		return percent;
 	}
 }

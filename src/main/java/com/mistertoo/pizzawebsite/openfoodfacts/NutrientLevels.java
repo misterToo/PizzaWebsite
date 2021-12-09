@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Nutrient levels.
+ */
 public class NutrientLevels{
 
 	@JsonProperty("salt")
@@ -16,19 +19,39 @@ public class NutrientLevels{
 	@JsonProperty("saturated-fat")
 	private String saturatedFat;
 
-	public String getSalt(){
+    /**
+     * Get salt string.
+     *
+     * @return the string
+     */
+    public String getSalt(){
 		return salt;
 	}
 
-	public String getSugars(){
+    /**
+     * Get sugars string.
+     *
+     * @return the string
+     */
+    public String getSugars(){
 		return sugars;
 	}
 
-	public String getFat(){
+    /**
+     * Get fat string.
+     *
+     * @return the string
+     */
+    public String getFat(){
 		return fat;
 	}
 
-	public String getSaturatedFat(){
+    /**
+     * Get saturated fat string.
+     *
+     * @return the string
+     */
+    public String getSaturatedFat(){
 		return saturatedFat;
 	}
 }

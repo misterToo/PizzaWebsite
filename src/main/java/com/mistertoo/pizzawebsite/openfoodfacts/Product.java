@@ -3,6 +3,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Product.
+ */
 public class Product{
 
 	@JsonProperty("emb_codes_debug_tags")
@@ -719,955 +722,2145 @@ public class Product{
 	@JsonProperty("nutrition_score_beverage")
 	private int nutritionScoreBeverage;
 
-	public List<Object> getEmbCodesDebugTags(){
+    /**
+     * Get emb codes debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getEmbCodesDebugTags(){
 		return embCodesDebugTags;
 	}
 
-	public String getCountriesImported(){
+    /**
+     * Get countries imported string.
+     *
+     * @return the string
+     */
+    public String getCountriesImported(){
 		return countriesImported;
 	}
 
-	public List<Object> getVitaminsTags(){
+    /**
+     * Get vitamins tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getVitaminsTags(){
 		return vitaminsTags;
 	}
 
-	public String getAllergensFromIngredients(){
+    /**
+     * Get allergens from ingredients string.
+     *
+     * @return the string
+     */
+    public String getAllergensFromIngredients(){
 		return allergensFromIngredients;
 	}
 
-	public List<String> getIngredientsOriginalTags(){
+    /**
+     * Get ingredients original tags list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsOriginalTags(){
 		return ingredientsOriginalTags;
 	}
 
-	public CategoryProperties getCategoryProperties(){
+    /**
+     * Get category properties category properties.
+     *
+     * @return the category properties
+     */
+    public CategoryProperties getCategoryProperties(){
 		return categoryProperties;
 	}
 
-	public String getServingSizeImported(){
+    /**
+     * Get serving size imported string.
+     *
+     * @return the string
+     */
+    public String getServingSizeImported(){
 		return servingSizeImported;
 	}
 
-	public int getNewAdditivesN(){
+    /**
+     * Get new additives n int.
+     *
+     * @return the int
+     */
+    public int getNewAdditivesN(){
 		return newAdditivesN;
 	}
 
-	public String getCategoriesImported(){
+    /**
+     * Get categories imported string.
+     *
+     * @return the string
+     */
+    public String getCategoriesImported(){
 		return categoriesImported;
 	}
 
-	public List<Object> getAddedCountriesTags(){
+    /**
+     * Get added countries tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getAddedCountriesTags(){
 		return addedCountriesTags;
 	}
 
-	public Nutriments getNutriments(){
+    /**
+     * Get nutriments nutriments.
+     *
+     * @return the nutriments
+     */
+    public Nutriments getNutriments(){
 		return nutriments;
 	}
 
-	public List<String> getPhotographers(){
+    /**
+     * Get photographers list.
+     *
+     * @return the list
+     */
+    public List<String> getPhotographers(){
 		return photographers;
 	}
 
-	public List<Object> getNutritionDataPreparedPerDebugTags(){
+    /**
+     * Get nutrition data prepared per debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getNutritionDataPreparedPerDebugTags(){
 		return nutritionDataPreparedPerDebugTags;
 	}
 
-	public List<String> getCodesTags(){
+    /**
+     * Get codes tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCodesTags(){
 		return codesTags;
 	}
 
-	public NutrientLevels getNutrientLevels(){
+    /**
+     * Get nutrient levels nutrient levels.
+     *
+     * @return the nutrient levels
+     */
+    public NutrientLevels getNutrientLevels(){
 		return nutrientLevels;
 	}
 
-	public List<String> getAdditivesTags(){
+    /**
+     * Get additives tags list.
+     *
+     * @return the list
+     */
+    public List<String> getAdditivesTags(){
 		return additivesTags;
 	}
 
-	public List<String> getBrandsTags(){
+    /**
+     * Get brands tags list.
+     *
+     * @return the list
+     */
+    public List<String> getBrandsTags(){
 		return brandsTags;
 	}
 
-	public String getImageIngredientsThumbUrl(){
+    /**
+     * Get image ingredients thumb url string.
+     *
+     * @return the string
+     */
+    public String getImageIngredientsThumbUrl(){
 		return imageIngredientsThumbUrl;
 	}
 
-	public List<String> getLastImageDatesTags(){
+    /**
+     * Get last image dates tags list.
+     *
+     * @return the list
+     */
+    public List<String> getLastImageDatesTags(){
 		return lastImageDatesTags;
 	}
 
-	public List<Object> getNucleotidesTags(){
+    /**
+     * Get nucleotides tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getNucleotidesTags(){
 		return nucleotidesTags;
 	}
 
-	public long getPopularityKey(){
+    /**
+     * Get popularity key long.
+     *
+     * @return the long
+     */
+    public long getPopularityKey(){
 		return popularityKey;
 	}
 
-	public List<String> getIngredientsNTags(){
+    /**
+     * Get ingredients n tags list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsNTags(){
 		return ingredientsNTags;
 	}
 
-	public String getCountries(){
+    /**
+     * Get countries string.
+     *
+     * @return the string
+     */
+    public String getCountries(){
 		return countries;
 	}
 
-	public String getLabels(){
+    /**
+     * Get labels string.
+     *
+     * @return the string
+     */
+    public String getLabels(){
 		return labels;
 	}
 
-	public String getImageFrontSmallUrl(){
+    /**
+     * Get image front small url string.
+     *
+     * @return the string
+     */
+    public String getImageFrontSmallUrl(){
 		return imageFrontSmallUrl;
 	}
 
-	public int getIngredientsFromOrThatMayBeFromPalmOilN(){
+    /**
+     * Get ingredients from or that may be from palm oil n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsFromOrThatMayBeFromPalmOilN(){
 		return ingredientsFromOrThatMayBeFromPalmOilN;
 	}
 
-	public String getNutritionGradeFr(){
+    /**
+     * Get nutrition grade fr string.
+     *
+     * @return the string
+     */
+    public String getNutritionGradeFr(){
 		return nutritionGradeFr;
 	}
 
-	public List<Object> getCitiesTags(){
+    /**
+     * Get cities tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getCitiesTags(){
 		return citiesTags;
 	}
 
-	public List<String> getDataQualityTags(){
+    /**
+     * Get data quality tags list.
+     *
+     * @return the list
+     */
+    public List<String> getDataQualityTags(){
 		return dataQualityTags;
 	}
 
-	public List<String> getNovaGroupsTags(){
+    /**
+     * Get nova groups tags list.
+     *
+     * @return the list
+     */
+    public List<String> getNovaGroupsTags(){
 		return novaGroupsTags;
 	}
 
-	public String getIngredientsTextEn(){
+    /**
+     * Get ingredients text en string.
+     *
+     * @return the string
+     */
+    public String getIngredientsTextEn(){
 		return ingredientsTextEn;
 	}
 
-	public List<Object> getCheckersTags(){
+    /**
+     * Get checkers tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getCheckersTags(){
 		return checkersTags;
 	}
 
-	public List<String> getPnnsGroups1Tags(){
+    /**
+     * Get pnns groups 1 tags list.
+     *
+     * @return the list
+     */
+    public List<String> getPnnsGroups1Tags(){
 		return pnnsGroups1Tags;
 	}
 
-	public LanguagesCodes getLanguagesCodes(){
+    /**
+     * Get languages codes languages codes.
+     *
+     * @return the languages codes
+     */
+    public LanguagesCodes getLanguagesCodes(){
 		return languagesCodes;
 	}
 
-	public List<String> getStatesTags(){
+    /**
+     * Get states tags list.
+     *
+     * @return the list
+     */
+    public List<String> getStatesTags(){
 		return statesTags;
 	}
 
-	public List<Object> getBrandsDebugTags(){
+    /**
+     * Get brands debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getBrandsDebugTags(){
 		return brandsDebugTags;
 	}
 
-	public List<String> getAdditivesOriginalTags(){
+    /**
+     * Get additives original tags list.
+     *
+     * @return the list
+     */
+    public List<String> getAdditivesOriginalTags(){
 		return additivesOriginalTags;
 	}
 
-	public List<IngredientsItem> getIngredients(){
+    /**
+     * Get ingredients list.
+     *
+     * @return the list
+     */
+    public List<IngredientsItem> getIngredients(){
 		return ingredients;
 	}
 
-	public String getOrigins(){
+    /**
+     * Get origins string.
+     *
+     * @return the string
+     */
+    public String getOrigins(){
 		return origins;
 	}
 
-	public List<Object> getServingSizeDebugTags(){
+    /**
+     * Get serving size debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getServingSizeDebugTags(){
 		return servingSizeDebugTags;
 	}
 
-	public String getBrands(){
+    /**
+     * Get brands string.
+     *
+     * @return the string
+     */
+    public String getBrands(){
 		return brands;
 	}
 
-	public String getLabelsLc(){
+    /**
+     * Get labels lc string.
+     *
+     * @return the string
+     */
+    public String getLabelsLc(){
 		return labelsLc;
 	}
 
-	public Languages getLanguages(){
+    /**
+     * Get languages languages.
+     *
+     * @return the languages
+     */
+    public Languages getLanguages(){
 		return languages;
 	}
 
-	public List<String> getCiqualFoodNameTags(){
+    /**
+     * Get ciqual food name tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCiqualFoodNameTags(){
 		return ciqualFoodNameTags;
 	}
 
-	public String getIngredientsTextWithAllergens(){
+    /**
+     * Get ingredients text with allergens string.
+     *
+     * @return the string
+     */
+    public String getIngredientsTextWithAllergens(){
 		return ingredientsTextWithAllergens;
 	}
 
-	public String getManufacturingPlaces(){
+    /**
+     * Get manufacturing places string.
+     *
+     * @return the string
+     */
+    public String getManufacturingPlaces(){
 		return manufacturingPlaces;
 	}
 
-	public int getIngredientsWithSpecifiedPercentSum(){
+    /**
+     * Get ingredients with specified percent sum int.
+     *
+     * @return the int
+     */
+    public int getIngredientsWithSpecifiedPercentSum(){
 		return ingredientsWithSpecifiedPercentSum;
 	}
 
-	public List<String> getCategoriesHierarchy(){
+    /**
+     * Get categories hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getCategoriesHierarchy(){
 		return categoriesHierarchy;
 	}
 
-	public List<Object> getQuantityDebugTags(){
+    /**
+     * Get quantity debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getQuantityDebugTags(){
 		return quantityDebugTags;
 	}
 
-	public String getCategoriesOld(){
+    /**
+     * Get categories old string.
+     *
+     * @return the string
+     */
+    public String getCategoriesOld(){
 		return categoriesOld;
 	}
 
-	public String getEmbCodes20141016(){
+    /**
+     * Get emb codes 20141016 string.
+     *
+     * @return the string
+     */
+    public String getEmbCodes20141016(){
 		return embCodes20141016;
 	}
 
-	public Object getAdditivesTagsN(){
+    /**
+     * Get additives tags n object.
+     *
+     * @return the object
+     */
+    public Object getAdditivesTagsN(){
 		return additivesTagsN;
 	}
 
-	public List<String> getEditorsTags(){
+    /**
+     * Get editors tags list.
+     *
+     * @return the list
+     */
+    public List<String> getEditorsTags(){
 		return editorsTags;
 	}
 
-	public List<String> getOriginsTags(){
+    /**
+     * Get origins tags list.
+     *
+     * @return the list
+     */
+    public List<String> getOriginsTags(){
 		return originsTags;
 	}
 
-	public String getNutriscoreGrade(){
+    /**
+     * Get nutriscore grade string.
+     *
+     * @return the string
+     */
+    public String getNutriscoreGrade(){
 		return nutriscoreGrade;
 	}
 
-	public List<String> getAdditivesOldTags(){
+    /**
+     * Get additives old tags list.
+     *
+     * @return the list
+     */
+    public List<String> getAdditivesOldTags(){
 		return additivesOldTags;
 	}
 
-	public int getCompletedT(){
+    /**
+     * Get completed t int.
+     *
+     * @return the int
+     */
+    public int getCompletedT(){
 		return completedT;
 	}
 
-	public String getNutritionGrades(){
+    /**
+     * Get nutrition grades string.
+     *
+     * @return the string
+     */
+    public String getNutritionGrades(){
 		return nutritionGrades;
 	}
 
-	public List<String> getIngredientsDebug(){
+    /**
+     * Get ingredients debug list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsDebug(){
 		return ingredientsDebug;
 	}
 
-	public List<String> getCorrectorsTags(){
+    /**
+     * Get correctors tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCorrectorsTags(){
 		return correctorsTags;
 	}
 
-	public List<Object> getRemovedCountriesTags(){
+    /**
+     * Get removed countries tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getRemovedCountriesTags(){
 		return removedCountriesTags;
 	}
 
-	public List<Object> getEmbCodesTags(){
+    /**
+     * Get emb codes tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getEmbCodesTags(){
 		return embCodesTags;
 	}
 
-	public List<String> getDebugParamSortedLangs(){
+    /**
+     * Get debug param sorted langs list.
+     *
+     * @return the list
+     */
+    public List<String> getDebugParamSortedLangs(){
 		return debugParamSortedLangs;
 	}
 
-	public String getImageFrontThumbUrl(){
+    /**
+     * Get image front thumb url string.
+     *
+     * @return the string
+     */
+    public String getImageFrontThumbUrl(){
 		return imageFrontThumbUrl;
 	}
 
-	public List<String> getIngredientsTags(){
+    /**
+     * Get ingredients tags list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsTags(){
 		return ingredientsTags;
 	}
 
-	public double getCompleteness(){
+    /**
+     * Get completeness double.
+     *
+     * @return the double
+     */
+    public double getCompleteness(){
 		return completeness;
 	}
 
-	public String getExpirationDate(){
+    /**
+     * Get expiration date string.
+     *
+     * @return the string
+     */
+    public String getExpirationDate(){
 		return expirationDate;
 	}
 
-	public String getImageNutritionUrl(){
+    /**
+     * Get image nutrition url string.
+     *
+     * @return the string
+     */
+    public String getImageNutritionUrl(){
 		return imageNutritionUrl;
 	}
 
-	public List<PackagingsItem> getPackagings(){
+    /**
+     * Get packagings list.
+     *
+     * @return the list
+     */
+    public List<PackagingsItem> getPackagings(){
 		return packagings;
 	}
 
-	public int getNovaGroup(){
+    /**
+     * Get nova group int.
+     *
+     * @return the int
+     */
+    public int getNovaGroup(){
 		return novaGroup;
 	}
 
-	public String getNutritionDataPrepared(){
+    /**
+     * Get nutrition data prepared string.
+     *
+     * @return the string
+     */
+    public String getNutritionDataPrepared(){
 		return nutritionDataPrepared;
 	}
 
-	public int getNutriscoreScore(){
+    /**
+     * Get nutriscore score int.
+     *
+     * @return the int
+     */
+    public int getNutriscoreScore(){
 		return nutriscoreScore;
 	}
 
-	public List<String> getLanguagesTags(){
+    /**
+     * Get languages tags list.
+     *
+     * @return the list
+     */
+    public List<String> getLanguagesTags(){
 		return languagesTags;
 	}
 
-	public String getServingSize(){
+    /**
+     * Get serving size string.
+     *
+     * @return the string
+     */
+    public String getServingSize(){
 		return servingSize;
 	}
 
-	public List<String> getIngredientsIdsDebug(){
+    /**
+     * Get ingredients ids debug list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsIdsDebug(){
 		return ingredientsIdsDebug;
 	}
 
-	public List<Object> getGenericNameEnDebugTags(){
+    /**
+     * Get generic name en debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getGenericNameEnDebugTags(){
 		return genericNameEnDebugTags;
 	}
 
-	public int getRev(){
+    /**
+     * Get rev int.
+     *
+     * @return the int
+     */
+    public int getRev(){
 		return rev;
 	}
 
-	public String getEcoscoreGrade(){
+    /**
+     * Get ecoscore grade string.
+     *
+     * @return the string
+     */
+    public String getEcoscoreGrade(){
 		return ecoscoreGrade;
 	}
 
-	public List<String> getCorrectors(){
+    /**
+     * Get correctors list.
+     *
+     * @return the list
+     */
+    public List<String> getCorrectors(){
 		return correctors;
 	}
 
-	public String getAllergensFromUser(){
+    /**
+     * Get allergens from user string.
+     *
+     * @return the string
+     */
+    public String getAllergensFromUser(){
 		return allergensFromUser;
 	}
 
-	public List<Object> getIngredientsFromPalmOilTags(){
+    /**
+     * Get ingredients from palm oil tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getIngredientsFromPalmOilTags(){
 		return ingredientsFromPalmOilTags;
 	}
 
-	public List<Object> getLinkDebugTags(){
+    /**
+     * Get link debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getLinkDebugTags(){
 		return linkDebugTags;
 	}
 
-	public List<String> getLabelsHierarchy(){
+    /**
+     * Get labels hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getLabelsHierarchy(){
 		return labelsHierarchy;
 	}
 
-	public String getNoNutritionData(){
+    /**
+     * Get no nutrition data string.
+     *
+     * @return the string
+     */
+    public String getNoNutritionData(){
 		return noNutritionData;
 	}
 
-	public String getBrandOwner(){
+    /**
+     * Get brand owner string.
+     *
+     * @return the string
+     */
+    public String getBrandOwner(){
 		return brandOwner;
 	}
 
-	public String getGenericNameEn(){
+    /**
+     * Get generic name en string.
+     *
+     * @return the string
+     */
+    public String getGenericNameEn(){
 		return genericNameEn;
 	}
 
-	public List<Object> getProductNameEnDebugTags(){
+    /**
+     * Get product name en debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getProductNameEnDebugTags(){
 		return productNameEnDebugTags;
 	}
 
-	public List<SourcesItem> getSources(){
+    /**
+     * Get sources list.
+     *
+     * @return the list
+     */
+    public List<SourcesItem> getSources(){
 		return sources;
 	}
 
-	public List<Object> getCheckers(){
+    /**
+     * Get checkers list.
+     *
+     * @return the list
+     */
+    public List<Object> getCheckers(){
 		return checkers;
 	}
 
-	public int getIngredientsWithSpecifiedPercentN(){
+    /**
+     * Get ingredients with specified percent n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsWithSpecifiedPercentN(){
 		return ingredientsWithSpecifiedPercentN;
 	}
 
-	public List<Object> getUnknownNutrientsTags(){
+    /**
+     * Get unknown nutrients tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getUnknownNutrientsTags(){
 		return unknownNutrientsTags;
 	}
 
-	public int getNutriscoreScoreOpposite(){
+    /**
+     * Get nutriscore score opposite int.
+     *
+     * @return the int
+     */
+    public int getNutriscoreScoreOpposite(){
 		return nutriscoreScoreOpposite;
 	}
 
-	public List<String> getLastEditDatesTags(){
+    /**
+     * Get last edit dates tags list.
+     *
+     * @return the list
+     */
+    public List<String> getLastEditDatesTags(){
 		return lastEditDatesTags;
 	}
 
-	public String getStates(){
+    /**
+     * Get states string.
+     *
+     * @return the string
+     */
+    public String getStates(){
 		return states;
 	}
 
-	public List<Object> getDataQualityBugsTags(){
+    /**
+     * Get data quality bugs tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getDataQualityBugsTags(){
 		return dataQualityBugsTags;
 	}
 
-	public String getImageIngredientsUrl(){
+    /**
+     * Get image ingredients url string.
+     *
+     * @return the string
+     */
+    public String getImageIngredientsUrl(){
 		return imageIngredientsUrl;
 	}
 
-	public String getOriginsOld(){
+    /**
+     * Get origins old string.
+     *
+     * @return the string
+     */
+    public String getOriginsOld(){
 		return originsOld;
 	}
 
-	public List<Object> getOtherNutritionalSubstancesTags(){
+    /**
+     * Get other nutritional substances tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getOtherNutritionalSubstancesTags(){
 		return otherNutritionalSubstancesTags;
 	}
 
-	public List<Object> getVitaminsPrevTags(){
+    /**
+     * Get vitamins prev tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getVitaminsPrevTags(){
 		return vitaminsPrevTags;
 	}
 
-	public String getNovaGroups(){
+    /**
+     * Get nova groups string.
+     *
+     * @return the string
+     */
+    public String getNovaGroups(){
 		return novaGroups;
 	}
 
-	public List<String> getPnnsGroups2Tags(){
+    /**
+     * Get pnns groups 2 tags list.
+     *
+     * @return the list
+     */
+    public List<String> getPnnsGroups2Tags(){
 		return pnnsGroups2Tags;
 	}
 
-	public String getImageNutritionThumbUrl(){
+    /**
+     * Get image nutrition thumb url string.
+     *
+     * @return the string
+     */
+    public String getImageNutritionThumbUrl(){
 		return imageNutritionThumbUrl;
 	}
 
-	public String getServingQuantity(){
+    /**
+     * Get serving quantity string.
+     *
+     * @return the string
+     */
+    public String getServingQuantity(){
 		return servingQuantity;
 	}
 
-	public List<String> getDataQualityInfoTags(){
+    /**
+     * Get data quality info tags list.
+     *
+     * @return the list
+     */
+    public List<String> getDataQualityInfoTags(){
 		return dataQualityInfoTags;
 	}
 
-	public int getLastModifiedT(){
+    /**
+     * Get last modified t int.
+     *
+     * @return the int
+     */
+    public int getLastModifiedT(){
 		return lastModifiedT;
 	}
 
-	public String getPackaging(){
+    /**
+     * Get packaging string.
+     *
+     * @return the string
+     */
+    public String getPackaging(){
 		return packaging;
 	}
 
-	public List<Object> getAminoAcidsPrevTags(){
+    /**
+     * Get amino acids prev tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getAminoAcidsPrevTags(){
 		return aminoAcidsPrevTags;
 	}
 
-	public String getEmbCodesOrig(){
+    /**
+     * Get emb codes orig string.
+     *
+     * @return the string
+     */
+    public String getEmbCodesOrig(){
 		return embCodesOrig;
 	}
 
-	public String getImageThumbUrl(){
+    /**
+     * Get image thumb url string.
+     *
+     * @return the string
+     */
+    public String getImageThumbUrl(){
 		return imageThumbUrl;
 	}
 
-	public String getAllergens(){
+    /**
+     * Get allergens string.
+     *
+     * @return the string
+     */
+    public String getAllergens(){
 		return allergens;
 	}
 
-	public List<String> getIngredientsAnalysisTags(){
+    /**
+     * Get ingredients analysis tags list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsAnalysisTags(){
 		return ingredientsAnalysisTags;
 	}
 
-	public int getAdditivesOldN(){
+    /**
+     * Get additives old n int.
+     *
+     * @return the int
+     */
+    public int getAdditivesOldN(){
 		return additivesOldN;
 	}
 
-	public List<String> getDataSourcesTags(){
+    /**
+     * Get data sources tags list.
+     *
+     * @return the list
+     */
+    public List<String> getDataSourcesTags(){
 		return dataSourcesTags;
 	}
 
-	public List<Object> getLangDebugTags(){
+    /**
+     * Get lang debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getLangDebugTags(){
 		return langDebugTags;
 	}
 
-	public String getMaxImgid(){
+    /**
+     * Get max imgid string.
+     *
+     * @return the string
+     */
+    public String getMaxImgid(){
 		return maxImgid;
 	}
 
-	public int getIngredientsN(){
+    /**
+     * Get ingredients n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsN(){
 		return ingredientsN;
 	}
 
-	public List<String> getAllergensHierarchy(){
+    /**
+     * Get allergens hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getAllergensHierarchy(){
 		return allergensHierarchy;
 	}
 
-	public List<Object> getStoresTags(){
+    /**
+     * Get stores tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getStoresTags(){
 		return storesTags;
 	}
 
-	public List<String> getEcoscoreTags(){
+    /**
+     * Get ecoscore tags list.
+     *
+     * @return the list
+     */
+    public List<String> getEcoscoreTags(){
 		return ecoscoreTags;
 	}
 
-	public String getNutritionData(){
+    /**
+     * Get nutrition data string.
+     *
+     * @return the string
+     */
+    public String getNutritionData(){
 		return nutritionData;
 	}
 
-	public List<Object> getAdditivesDebugTags(){
+    /**
+     * Get additives debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getAdditivesDebugTags(){
 		return additivesDebugTags;
 	}
 
-	public List<String> getLanguagesHierarchy(){
+    /**
+     * Get languages hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getLanguagesHierarchy(){
 		return languagesHierarchy;
 	}
 
-	public List<Object> getTracesDebugTags(){
+    /**
+     * Get traces debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getTracesDebugTags(){
 		return tracesDebugTags;
 	}
 
-	public int getUniqueScansN(){
+    /**
+     * Get unique scans n int.
+     *
+     * @return the int
+     */
+    public int getUniqueScansN(){
 		return uniqueScansN;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public List<Object> getAminoAcidsTags(){
+    /**
+     * Get amino acids tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getAminoAcidsTags(){
 		return aminoAcidsTags;
 	}
 
-	public String getImageSmallUrl(){
+    /**
+     * Get image small url string.
+     *
+     * @return the string
+     */
+    public String getImageSmallUrl(){
 		return imageSmallUrl;
 	}
 
-	public Images getImages(){
+    /**
+     * Get images images.
+     *
+     * @return the images
+     */
+    public Images getImages(){
 		return images;
 	}
 
-	public String getImageUrl(){
+    /**
+     * Get image url string.
+     *
+     * @return the string
+     */
+    public String getImageUrl(){
 		return imageUrl;
 	}
 
-	public String getImageIngredientsSmallUrl(){
+    /**
+     * Get image ingredients small url string.
+     *
+     * @return the string
+     */
+    public String getImageIngredientsSmallUrl(){
 		return imageIngredientsSmallUrl;
 	}
 
-	public String getProductNameEnImported(){
+    /**
+     * Get product name en imported string.
+     *
+     * @return the string
+     */
+    public String getProductNameEnImported(){
 		return productNameEnImported;
 	}
 
-	public List<String> getEntryDatesTags(){
+    /**
+     * Get entry dates tags list.
+     *
+     * @return the list
+     */
+    public List<String> getEntryDatesTags(){
 		return entryDatesTags;
 	}
 
-	public List<String> getInformers(){
+    /**
+     * Get informers list.
+     *
+     * @return the list
+     */
+    public List<String> getInformers(){
 		return informers;
 	}
 
-	public String getPurchasePlaces(){
+    /**
+     * Get purchase places string.
+     *
+     * @return the string
+     */
+    public String getPurchasePlaces(){
 		return purchasePlaces;
 	}
 
-	public List<String> getTracesTags(){
+    /**
+     * Get traces tags list.
+     *
+     * @return the list
+     */
+    public List<String> getTracesTags(){
 		return tracesTags;
 	}
 
-	public int getFruitsVegetablesNuts100gEstimate(){
+    /**
+     * Get fruits vegetables nuts 100 g estimate int.
+     *
+     * @return the int
+     */
+    public int getFruitsVegetablesNuts100gEstimate(){
 		return fruitsVegetablesNuts100gEstimate;
 	}
 
-	public String getImageNutritionSmallUrl(){
+    /**
+     * Get image nutrition small url string.
+     *
+     * @return the string
+     */
+    public String getImageNutritionSmallUrl(){
 		return imageNutritionSmallUrl;
 	}
 
-	public String getIngredientsTextWithAllergensEn(){
+    /**
+     * Get ingredients text with allergens en string.
+     *
+     * @return the string
+     */
+    public String getIngredientsTextWithAllergensEn(){
 		return ingredientsTextWithAllergensEn;
 	}
 
-	public String getCategoriesLc(){
+    /**
+     * Get categories lc string.
+     *
+     * @return the string
+     */
+    public String getCategoriesLc(){
 		return categoriesLc;
 	}
 
-	public List<Object> getManufacturingPlacesTags(){
+    /**
+     * Get manufacturing places tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getManufacturingPlacesTags(){
 		return manufacturingPlacesTags;
 	}
 
-	public List<Object> getMainCountriesTags(){
+    /**
+     * Get main countries tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getMainCountriesTags(){
 		return mainCountriesTags;
 	}
 
-	public List<String> getCategoriesPropertiesTags(){
+    /**
+     * Get categories properties tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCategoriesPropertiesTags(){
 		return categoriesPropertiesTags;
 	}
 
-	public List<String> getAllergensTags(){
+    /**
+     * Get allergens tags list.
+     *
+     * @return the list
+     */
+    public List<String> getAllergensTags(){
 		return allergensTags;
 	}
 
-	public String getProductQuantity(){
+    /**
+     * Get product quantity string.
+     *
+     * @return the string
+     */
+    public String getProductQuantity(){
 		return productQuantity;
 	}
 
-	public int getSortkey(){
+    /**
+     * Get sortkey int.
+     *
+     * @return the int
+     */
+    public int getSortkey(){
 		return sortkey;
 	}
 
-	public String getTracesFromIngredients(){
+    /**
+     * Get traces from ingredients string.
+     *
+     * @return the string
+     */
+    public String getTracesFromIngredients(){
 		return tracesFromIngredients;
 	}
 
-	public String getNutritionDataPreparedPer(){
+    /**
+     * Get nutrition data prepared per string.
+     *
+     * @return the string
+     */
+    public String getNutritionDataPreparedPer(){
 		return nutritionDataPreparedPer;
 	}
 
-	public String getIngredientsTextEnImported(){
+    /**
+     * Get ingredients text en imported string.
+     *
+     * @return the string
+     */
+    public String getIngredientsTextEnImported(){
 		return ingredientsTextEnImported;
 	}
 
-	public List<Object> getPurchasePlacesDebugTags(){
+    /**
+     * Get purchase places debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getPurchasePlacesDebugTags(){
 		return purchasePlacesDebugTags;
 	}
 
-	public String getOriginsLc(){
+    /**
+     * Get origins lc string.
+     *
+     * @return the string
+     */
+    public String getOriginsLc(){
 		return originsLc;
 	}
 
-	public String getLabelsOld(){
+    /**
+     * Get labels old string.
+     *
+     * @return the string
+     */
+    public String getLabelsOld(){
 		return labelsOld;
 	}
 
-	public List<String> getNutrientLevelsTags(){
+    /**
+     * Get nutrient levels tags list.
+     *
+     * @return the list
+     */
+    public List<String> getNutrientLevelsTags(){
 		return nutrientLevelsTags;
 	}
 
-	public String getCategories(){
+    /**
+     * Get categories string.
+     *
+     * @return the string
+     */
+    public String getCategories(){
 		return categories;
 	}
 
-	public SourcesFields getSourcesFields(){
+    /**
+     * Get sources fields sources fields.
+     *
+     * @return the sources fields
+     */
+    public SourcesFields getSourcesFields(){
 		return sourcesFields;
 	}
 
-	public String getInterfaceVersionCreated(){
+    /**
+     * Get interface version created string.
+     *
+     * @return the string
+     */
+    public String getInterfaceVersionCreated(){
 		return interfaceVersionCreated;
 	}
 
-	public int getIngredientsWithUnspecifiedPercentSum(){
+    /**
+     * Get ingredients with unspecified percent sum int.
+     *
+     * @return the int
+     */
+    public int getIngredientsWithUnspecifiedPercentSum(){
 		return ingredientsWithUnspecifiedPercentSum;
 	}
 
-	public String getCreator(){
+    /**
+     * Get creator string.
+     *
+     * @return the string
+     */
+    public String getCreator(){
 		return creator;
 	}
 
-	public List<Object> getCountriesDebugTags(){
+    /**
+     * Get countries debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getCountriesDebugTags(){
 		return countriesDebugTags;
 	}
 
-	public EcoscoreData getEcoscoreData(){
+    /**
+     * Get ecoscore data ecoscore data.
+     *
+     * @return the ecoscore data
+     */
+    public EcoscoreData getEcoscoreData(){
 		return ecoscoreData;
 	}
 
-	public List<Object> getPurchasePlacesTags(){
+    /**
+     * Get purchase places tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getPurchasePlacesTags(){
 		return purchasePlacesTags;
 	}
 
-	public String getStores(){
+    /**
+     * Get stores string.
+     *
+     * @return the string
+     */
+    public String getStores(){
 		return stores;
 	}
 
-	public int getNutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredientsValue(){
+    /**
+     * Get nutrition score warning fruits vegetables nuts estimate from ingredients value int.
+     *
+     * @return the int
+     */
+    public int getNutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredientsValue(){
 		return nutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredientsValue;
 	}
 
-	public String getTracesFromUser(){
+    /**
+     * Get traces from user string.
+     *
+     * @return the string
+     */
+    public String getTracesFromUser(){
 		return tracesFromUser;
 	}
 
-	public String getNutritionDataPreparedPerImported(){
+    /**
+     * Get nutrition data prepared per imported string.
+     *
+     * @return the string
+     */
+    public String getNutritionDataPreparedPerImported(){
 		return nutritionDataPreparedPerImported;
 	}
 
-	public List<String> getCountriesTags(){
+    /**
+     * Get countries tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCountriesTags(){
 		return countriesTags;
 	}
 
-	public String getDataSources(){
+    /**
+     * Get data sources string.
+     *
+     * @return the string
+     */
+    public String getDataSources(){
 		return dataSources;
 	}
 
-	public String getNovaGroupDebug(){
+    /**
+     * Get nova group debug string.
+     *
+     * @return the string
+     */
+    public String getNovaGroupDebug(){
 		return novaGroupDebug;
 	}
 
-	public String getIngredientsText(){
+    /**
+     * Get ingredients text string.
+     *
+     * @return the string
+     */
+    public String getIngredientsText(){
 		return ingredientsText;
 	}
 
-	public String getIngredientsTextDebug(){
+    /**
+     * Get ingredients text debug string.
+     *
+     * @return the string
+     */
+    public String getIngredientsTextDebug(){
 		return ingredientsTextDebug;
 	}
 
-	public int getCreatedT(){
+    /**
+     * Get created t int.
+     *
+     * @return the int
+     */
+    public int getCreatedT(){
 		return createdT;
 	}
 
-	public String getLc(){
+    /**
+     * Get lc string.
+     *
+     * @return the string
+     */
+    public String getLc(){
 		return lc;
 	}
 
-	public List<Object> getNutritionDataPerDebugTags(){
+    /**
+     * Get nutrition data per debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getNutritionDataPerDebugTags(){
 		return nutritionDataPerDebugTags;
 	}
 
-	public String getComparedToCategory(){
+    /**
+     * Get compared to category string.
+     *
+     * @return the string
+     */
+    public String getComparedToCategory(){
 		return comparedToCategory;
 	}
 
-	public List<String> getOriginsHierarchy(){
+    /**
+     * Get origins hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getOriginsHierarchy(){
 		return originsHierarchy;
 	}
 
-	public SelectedImages getSelectedImages(){
+    /**
+     * Get selected images selected images.
+     *
+     * @return the selected images
+     */
+    public SelectedImages getSelectedImages(){
 		return selectedImages;
 	}
 
-	public List<Object> getDataQualityErrorsTags(){
+    /**
+     * Get data quality errors tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getDataQualityErrorsTags(){
 		return dataQualityErrorsTags;
 	}
 
-	public int getComplete(){
+    /**
+     * Get complete int.
+     *
+     * @return the int
+     */
+    public int getComplete(){
 		return complete;
 	}
 
-	public String getPnnsGroups1(){
+    /**
+     * Get pnns groups 1 string.
+     *
+     * @return the string
+     */
+    public String getPnnsGroups1(){
 		return pnnsGroups1;
 	}
 
-	public String getPnnsGroups2(){
+    /**
+     * Get pnns groups 2 string.
+     *
+     * @return the string
+     */
+    public String getPnnsGroups2(){
 		return pnnsGroups2;
 	}
 
-	public List<String> getLabelsTags(){
+    /**
+     * Get labels tags list.
+     *
+     * @return the list
+     */
+    public List<String> getLabelsTags(){
 		return labelsTags;
 	}
 
-	public List<Object> getPackagingDebugTags(){
+    /**
+     * Get packaging debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getPackagingDebugTags(){
 		return packagingDebugTags;
 	}
 
-	public List<String> getDataQualityWarningsTags(){
+    /**
+     * Get data quality warnings tags list.
+     *
+     * @return the list
+     */
+    public List<String> getDataQualityWarningsTags(){
 		return dataQualityWarningsTags;
 	}
 
-	public List<String> getPackagingTags(){
+    /**
+     * Get packaging tags list.
+     *
+     * @return the list
+     */
+    public List<String> getPackagingTags(){
 		return packagingTags;
 	}
 
-	public int getKnownIngredientsN(){
+    /**
+     * Get known ingredients n int.
+     *
+     * @return the int
+     */
+    public int getKnownIngredientsN(){
 		return knownIngredientsN;
 	}
 
-	public String getUpdateKey(){
+    /**
+     * Get update key string.
+     *
+     * @return the string
+     */
+    public String getUpdateKey(){
 		return updateKey;
 	}
 
-	public List<Object> getMineralsPrevTags(){
+    /**
+     * Get minerals prev tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getMineralsPrevTags(){
 		return mineralsPrevTags;
 	}
 
-	public List<Object> getManufacturingPlacesDebugTags(){
+    /**
+     * Get manufacturing places debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getManufacturingPlacesDebugTags(){
 		return manufacturingPlacesDebugTags;
 	}
 
-	public List<String> getKeywords(){
+    /**
+     * Get keywords list.
+     *
+     * @return the list
+     */
+    public List<String> getKeywords(){
 		return keywords;
 	}
 
-	public String getProductNameEn(){
+    /**
+     * Get product name en string.
+     *
+     * @return the string
+     */
+    public String getProductNameEn(){
 		return productNameEn;
 	}
 
-	public CategoriesProperties getCategoriesProperties(){
+    /**
+     * Get categories properties categories properties.
+     *
+     * @return the categories properties
+     */
+    public CategoriesProperties getCategoriesProperties(){
 		return categoriesProperties;
 	}
 
-	public List<String> getInformersTags(){
+    /**
+     * Get informers tags list.
+     *
+     * @return the list
+     */
+    public List<String> getInformersTags(){
 		return informersTags;
 	}
 
-	public String getEmbCodes(){
+    /**
+     * Get emb codes string.
+     *
+     * @return the string
+     */
+    public String getEmbCodes(){
 		return embCodes;
 	}
 
-	public String getGenericName(){
+    /**
+     * Get generic name string.
+     *
+     * @return the string
+     */
+    public String getGenericName(){
 		return genericName;
 	}
 
-	public String getLastEditor(){
+    /**
+     * Get last editor string.
+     *
+     * @return the string
+     */
+    public String getLastEditor(){
 		return lastEditor;
 	}
 
-	public String getTraces(){
+    /**
+     * Get traces string.
+     *
+     * @return the string
+     */
+    public String getTraces(){
 		return traces;
 	}
 
-	public List<Object> getIngredientsTextEnDebugTags(){
+    /**
+     * Get ingredients text en debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getIngredientsTextEnDebugTags(){
 		return ingredientsTextEnDebugTags;
 	}
 
-	public int getIngredientsThatMayBeFromPalmOilN(){
+    /**
+     * Get ingredients that may be from palm oil n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsThatMayBeFromPalmOilN(){
 		return ingredientsThatMayBeFromPalmOilN;
 	}
 
-	public List<String> getTracesHierarchy(){
+    /**
+     * Get traces hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getTracesHierarchy(){
 		return tracesHierarchy;
 	}
 
-	public String getProductName(){
+    /**
+     * Get product name string.
+     *
+     * @return the string
+     */
+    public String getProductName(){
 		return productName;
 	}
 
-	public List<Object> getMineralsTags(){
+    /**
+     * Get minerals tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getMineralsTags(){
 		return mineralsTags;
 	}
 
-	public List<String> getPhotographersTags(){
+    /**
+     * Get photographers tags list.
+     *
+     * @return the list
+     */
+    public List<String> getPhotographersTags(){
 		return photographersTags;
 	}
 
-	public String getCountriesLc(){
+    /**
+     * Get countries lc string.
+     *
+     * @return the string
+     */
+    public String getCountriesLc(){
 		return countriesLc;
 	}
 
-	public String getDataSourcesImported(){
+    /**
+     * Get data sources imported string.
+     *
+     * @return the string
+     */
+    public String getDataSourcesImported(){
 		return dataSourcesImported;
 	}
 
-	public List<String> getStatesHierarchy(){
+    /**
+     * Get states hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getStatesHierarchy(){
 		return statesHierarchy;
 	}
 
-	public String get_Id(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String get_Id(){
 		return _id;
 	}
 
-	public String getInterfaceVersionModified(){
+    /**
+     * Get interface version modified string.
+     *
+     * @return the string
+     */
+    public String getInterfaceVersionModified(){
 		return interfaceVersionModified;
 	}
 
-	public int getIngredientsPercentAnalysis(){
+    /**
+     * Get ingredients percent analysis int.
+     *
+     * @return the int
+     */
+    public int getIngredientsPercentAnalysis(){
 		return ingredientsPercentAnalysis;
 	}
 
-	public List<Object> getExpirationDateDebugTags(){
+    /**
+     * Get expiration date debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getExpirationDateDebugTags(){
 		return expirationDateDebugTags;
 	}
 
-	public String getCode(){
+    /**
+     * Get code string.
+     *
+     * @return the string
+     */
+    public String getCode(){
 		return code;
 	}
 
-	public int getIngredientsFromPalmOilN(){
+    /**
+     * Get ingredients from palm oil n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsFromPalmOilN(){
 		return ingredientsFromPalmOilN;
 	}
 
-	public String getBrandOwnerImported(){
+    /**
+     * Get brand owner imported string.
+     *
+     * @return the string
+     */
+    public String getBrandOwnerImported(){
 		return brandOwnerImported;
 	}
 
-	public List<String> getMiscTags(){
+    /**
+     * Get misc tags list.
+     *
+     * @return the list
+     */
+    public List<String> getMiscTags(){
 		return miscTags;
 	}
 
-	public String getLink(){
+    /**
+     * Get link string.
+     *
+     * @return the string
+     */
+    public String getLink(){
 		return link;
 	}
 
-	public int getIngredientsWithUnspecifiedPercentN(){
+    /**
+     * Get ingredients with unspecified percent n int.
+     *
+     * @return the int
+     */
+    public int getIngredientsWithUnspecifiedPercentN(){
 		return ingredientsWithUnspecifiedPercentN;
 	}
 
-	public List<Object> getStoresDebugTags(){
+    /**
+     * Get stores debug tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getStoresDebugTags(){
 		return storesDebugTags;
 	}
 
-	public int getAdditivesN(){
+    /**
+     * Get additives n int.
+     *
+     * @return the int
+     */
+    public int getAdditivesN(){
 		return additivesN;
 	}
 
-	public List<String> getCategoriesTags(){
+    /**
+     * Get categories tags list.
+     *
+     * @return the list
+     */
+    public List<String> getCategoriesTags(){
 		return categoriesTags;
 	}
 
-	public int getUnknownIngredientsN(){
+    /**
+     * Get unknown ingredients n int.
+     *
+     * @return the int
+     */
+    public int getUnknownIngredientsN(){
 		return unknownIngredientsN;
 	}
 
-	public int getNutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredients(){
+    /**
+     * Get nutrition score warning fruits vegetables nuts estimate from ingredients int.
+     *
+     * @return the int
+     */
+    public int getNutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredients(){
 		return nutritionScoreWarningFruitsVegetablesNutsEstimateFromIngredients;
 	}
 
-	public String getLcImported(){
+    /**
+     * Get lc imported string.
+     *
+     * @return the string
+     */
+    public String getLcImported(){
 		return lcImported;
 	}
 
-	public String getNutritionDataPer(){
+    /**
+     * Get nutrition data per string.
+     *
+     * @return the string
+     */
+    public String getNutritionDataPer(){
 		return nutritionDataPer;
 	}
 
-	public List<String> getAdditivesPrevOriginalTags(){
+    /**
+     * Get additives prev original tags list.
+     *
+     * @return the list
+     */
+    public List<String> getAdditivesPrevOriginalTags(){
 		return additivesPrevOriginalTags;
 	}
 
-	public List<String> getIngredientsHierarchy(){
+    /**
+     * Get ingredients hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getIngredientsHierarchy(){
 		return ingredientsHierarchy;
 	}
 
-	public String getLang(){
+    /**
+     * Get lang string.
+     *
+     * @return the string
+     */
+    public String getLang(){
 		return lang;
 	}
 
-	public List<String> getEditors(){
+    /**
+     * Get editors list.
+     *
+     * @return the list
+     */
+    public List<String> getEditors(){
 		return editors;
 	}
 
-	public String getImageFrontUrl(){
+    /**
+     * Get image front url string.
+     *
+     * @return the string
+     */
+    public String getImageFrontUrl(){
 		return imageFrontUrl;
 	}
 
-	public List<String> getCountriesHierarchy(){
+    /**
+     * Get countries hierarchy list.
+     *
+     * @return the list
+     */
+    public List<String> getCountriesHierarchy(){
 		return countriesHierarchy;
 	}
 
-	public int getScansN(){
+    /**
+     * Get scans n int.
+     *
+     * @return the int
+     */
+    public int getScansN(){
 		return scansN;
 	}
 
-	public String getQuantity(){
+    /**
+     * Get quantity string.
+     *
+     * @return the string
+     */
+    public String getQuantity(){
 		return quantity;
 	}
 
-	public String getLastModifiedBy(){
+    /**
+     * Get last modified by string.
+     *
+     * @return the string
+     */
+    public String getLastModifiedBy(){
 		return lastModifiedBy;
 	}
 
-	public List<Object> getNucleotidesPrevTags(){
+    /**
+     * Get nucleotides prev tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getNucleotidesPrevTags(){
 		return nucleotidesPrevTags;
 	}
 
-	public List<String> getPopularityTags(){
+    /**
+     * Get popularity tags list.
+     *
+     * @return the list
+     */
+    public List<String> getPopularityTags(){
 		return popularityTags;
 	}
 
-	public List<Object> getIngredientsThatMayBeFromPalmOilTags(){
+    /**
+     * Get ingredients that may be from palm oil tags list.
+     *
+     * @return the list
+     */
+    public List<Object> getIngredientsThatMayBeFromPalmOilTags(){
 		return ingredientsThatMayBeFromPalmOilTags;
 	}
 
-	public List<String> getNutritionGradesTags(){
+    /**
+     * Get nutrition grades tags list.
+     *
+     * @return the list
+     */
+    public List<String> getNutritionGradesTags(){
 		return nutritionGradesTags;
 	}
 
-	public NutriscoreData getNutriscoreData(){
+    /**
+     * Get nutriscore data nutriscore data.
+     *
+     * @return the nutriscore data
+     */
+    public NutriscoreData getNutriscoreData(){
 		return nutriscoreData;
 	}
 
-	public String getNutritionDataPerImported(){
+    /**
+     * Get nutrition data per imported string.
+     *
+     * @return the string
+     */
+    public String getNutritionDataPerImported(){
 		return nutritionDataPerImported;
 	}
 
-	public int getLastImageT(){
+    /**
+     * Get last image t int.
+     *
+     * @return the int
+     */
+    public int getLastImageT(){
 		return lastImageT;
 	}
 
-	public int getNutritionScoreBeverage(){
+    /**
+     * Get nutrition score beverage int.
+     *
+     * @return the int
+     */
+    public int getNutritionScoreBeverage(){
 		return nutritionScoreBeverage;
 	}
 }

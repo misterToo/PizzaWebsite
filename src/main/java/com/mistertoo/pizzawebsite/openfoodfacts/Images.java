@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Images.
+ */
 public class Images{
 
 	@JsonProperty("1")
@@ -37,47 +40,102 @@ public class Images{
 	@JsonProperty("ingredients_en")
 	private IngredientsEn ingredientsEn;
 
-	public JsonMember1 getJsonMember1(){
+    /**
+     * Get json member 1 json member 1.
+     *
+     * @return the json member 1
+     */
+    public JsonMember1 getJsonMember1(){
 		return jsonMember1;
 	}
 
-	public JsonMember2 getJsonMember2(){
+    /**
+     * Get json member 2 json member 2.
+     *
+     * @return the json member 2
+     */
+    public JsonMember2 getJsonMember2(){
 		return jsonMember2;
 	}
 
-	public Nutrition getNutrition(){
+    /**
+     * Get nutrition nutrition.
+     *
+     * @return the nutrition
+     */
+    public Nutrition getNutrition(){
 		return nutrition;
 	}
 
-	public JsonMember3 getJsonMember3(){
+    /**
+     * Get json member 3 json member 3.
+     *
+     * @return the json member 3
+     */
+    public JsonMember3 getJsonMember3(){
 		return jsonMember3;
 	}
 
-	public FrontEn getFrontEn(){
+    /**
+     * Get front en front en.
+     *
+     * @return the front en
+     */
+    public FrontEn getFrontEn(){
 		return frontEn;
 	}
 
-	public JsonMember4 getJsonMember4(){
+    /**
+     * Get json member 4 json member 4.
+     *
+     * @return the json member 4
+     */
+    public JsonMember4 getJsonMember4(){
 		return jsonMember4;
 	}
 
-	public JsonMember5 getJsonMember5(){
+    /**
+     * Get json member 5 json member 5.
+     *
+     * @return the json member 5
+     */
+    public JsonMember5 getJsonMember5(){
 		return jsonMember5;
 	}
 
-	public NutritionEn getNutritionEn(){
+    /**
+     * Get nutrition en nutrition en.
+     *
+     * @return the nutrition en
+     */
+    public NutritionEn getNutritionEn(){
 		return nutritionEn;
 	}
 
-	public Ingredients getIngredients(){
+    /**
+     * Get ingredients ingredients.
+     *
+     * @return the ingredients
+     */
+    public Ingredients getIngredients(){
 		return ingredients;
 	}
 
-	public Front getFront(){
+    /**
+     * Get front front.
+     *
+     * @return the front
+     */
+    public Front getFront(){
 		return front;
 	}
 
-	public IngredientsEn getIngredientsEn(){
+    /**
+     * Get ingredients en ingredients en.
+     *
+     * @return the ingredients en
+     */
+    public IngredientsEn getIngredientsEn(){
 		return ingredientsEn;
 	}
 }

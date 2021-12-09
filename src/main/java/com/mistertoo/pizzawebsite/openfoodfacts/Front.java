@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Front.
+ */
 public class Front{
 
 	@JsonProperty("small")
@@ -31,39 +34,84 @@ public class Front{
 	@JsonProperty("geometry")
 	private String geometry;
 
-	public Small getSmall(){
+    /**
+     * Get small small.
+     *
+     * @return the small
+     */
+    public Small getSmall(){
 		return small;
 	}
 
-	public Thumb getThumb(){
+    /**
+     * Get thumb thumb.
+     *
+     * @return the thumb
+     */
+    public Thumb getThumb(){
 		return thumb;
 	}
 
-	public Display getDisplay(){
+    /**
+     * Get display display.
+     *
+     * @return the display
+     */
+    public Display getDisplay(){
 		return display;
 	}
 
-	public String getRev(){
+    /**
+     * Get rev string.
+     *
+     * @return the string
+     */
+    public String getRev(){
 		return rev;
 	}
 
-	public String getImgid(){
+    /**
+     * Get imgid string.
+     *
+     * @return the string
+     */
+    public String getImgid(){
 		return imgid;
 	}
 
-	public Sizes getSizes(){
+    /**
+     * Get sizes sizes.
+     *
+     * @return the sizes
+     */
+    public Sizes getSizes(){
 		return sizes;
 	}
 
-	public Object getNormalize(){
+    /**
+     * Get normalize object.
+     *
+     * @return the object
+     */
+    public Object getNormalize(){
 		return normalize;
 	}
 
-	public Object getWhiteMagic(){
+    /**
+     * Get white magic object.
+     *
+     * @return the object
+     */
+    public Object getWhiteMagic(){
 		return whiteMagic;
 	}
 
-	public String getGeometry(){
+    /**
+     * Get geometry string.
+     *
+     * @return the string
+     */
+    public String getGeometry(){
 		return geometry;
 	}
 }

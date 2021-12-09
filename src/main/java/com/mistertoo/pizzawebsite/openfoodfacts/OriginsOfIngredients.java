@@ -3,6 +3,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Origins of ingredients.
+ */
 public class OriginsOfIngredients{
 
 	@JsonProperty("epi_score")
@@ -26,31 +29,66 @@ public class OriginsOfIngredients{
 	@JsonProperty("epi_value")
 	private int epiValue;
 
-	public int getEpiScore(){
+    /**
+     * Get epi score int.
+     *
+     * @return the int
+     */
+    public int getEpiScore(){
 		return epiScore;
 	}
 
-	public List<String> getOriginsFromOriginsField(){
+    /**
+     * Get origins from origins field list.
+     *
+     * @return the list
+     */
+    public List<String> getOriginsFromOriginsField(){
 		return originsFromOriginsField;
 	}
 
-	public TransportationScores getTransportationScores(){
+    /**
+     * Get transportation scores transportation scores.
+     *
+     * @return the transportation scores
+     */
+    public TransportationScores getTransportationScores(){
 		return transportationScores;
 	}
 
-	public TransportationValues getTransportationValues(){
+    /**
+     * Get transportation values transportation values.
+     *
+     * @return the transportation values
+     */
+    public TransportationValues getTransportationValues(){
 		return transportationValues;
 	}
 
-	public List<AggregatedOriginsItem> getAggregatedOrigins(){
+    /**
+     * Get aggregated origins list.
+     *
+     * @return the list
+     */
+    public List<AggregatedOriginsItem> getAggregatedOrigins(){
 		return aggregatedOrigins;
 	}
 
-	public Values getValues(){
+    /**
+     * Get values values.
+     *
+     * @return the values
+     */
+    public Values getValues(){
 		return values;
 	}
 
-	public int getEpiValue(){
+    /**
+     * Get epi value int.
+     *
+     * @return the int
+     */
+    public int getEpiValue(){
 		return epiValue;
 	}
 }

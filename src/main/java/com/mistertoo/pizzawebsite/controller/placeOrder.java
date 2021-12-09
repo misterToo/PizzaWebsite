@@ -31,8 +31,9 @@ import java.io.IOException;
 import java.util.*;
 
 //TODO prices/rewards
+
 /**
- * The type Place order.
+ * Place order servlet
  */
 @WebServlet(
         urlPatterns = {"/placeOrder"}
@@ -40,8 +41,17 @@ import java.util.*;
 
 public class placeOrder extends HttpServlet implements PropertiesLoader{
     private final Logger logger = LogManager.getLogger(this.getClass());
+    /**
+     *Order dao.
+     */
     GenericDao<Order> orderDao = new GenericDao<>(Order.class);
+    /**
+     * Customer dao.
+     */
     GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+    /**
+     * openfoodfacts API values in properties file.
+     */
     Properties foodProperties;
 
     @Override
@@ -179,6 +189,13 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
 
     }
 
+    /**
+     * Takes openfoodfacts API URL and returns the kcal value
+     * @param foodID ID to get KCals for
+     * @param client client
+     * @return food kcal value
+     * @throws JsonProcessingException
+     */
     private int getKcal(String foodID, Client client) throws JsonProcessingException {
         int estimatedCalories;
         WebTarget target =
@@ -190,6 +207,10 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
         estimatedCalories = responseObj.getProduct().getNutriments().getEnergyKcal();
         return estimatedCalories;
     }
+
+    /**
+     * Loads the food api IDs from file
+     */
     private void loadProperties() {
         try {
             foodProperties = loadProperties("apiIDs.properties");

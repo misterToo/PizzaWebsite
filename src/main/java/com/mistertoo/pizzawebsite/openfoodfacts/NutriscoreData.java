@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Nutriscore data.
+ */
 public class NutriscoreData{
 
 	@JsonProperty("fiber_points")
@@ -100,131 +103,291 @@ public class NutriscoreData{
 	@JsonProperty("saturated_fat_ratio_points")
 	private int saturatedFatRatioPoints;
 
-	public int getFiberPoints(){
+    /**
+     * Get fiber points int.
+     *
+     * @return the int
+     */
+    public int getFiberPoints(){
 		return fiberPoints;
 	}
 
-	public double getSaturatedFatRatio(){
+    /**
+     * Get saturated fat ratio double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFatRatio(){
 		return saturatedFatRatio;
 	}
 
-	public int getSugarsPoints(){
+    /**
+     * Get sugars points int.
+     *
+     * @return the int
+     */
+    public int getSugarsPoints(){
 		return sugarsPoints;
 	}
 
-	public double getProteinsValue(){
+    /**
+     * Get proteins value double.
+     *
+     * @return the double
+     */
+    public double getProteinsValue(){
 		return proteinsValue;
 	}
 
-	public double getFiberValue(){
+    /**
+     * Get fiber value double.
+     *
+     * @return the double
+     */
+    public double getFiberValue(){
 		return fiberValue;
 	}
 
-	public int getPositivePoints(){
+    /**
+     * Get positive points int.
+     *
+     * @return the int
+     */
+    public int getPositivePoints(){
 		return positivePoints;
 	}
 
-	public int getIsCheese(){
+    /**
+     * Get is cheese int.
+     *
+     * @return the int
+     */
+    public int getIsCheese(){
 		return isCheese;
 	}
 
-	public double getSaturatedFatValue(){
+    /**
+     * Get saturated fat value double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFatValue(){
 		return saturatedFatValue;
 	}
 
-	public int getScore(){
+    /**
+     * Get score int.
+     *
+     * @return the int
+     */
+    public int getScore(){
 		return score;
 	}
 
-	public int getFruitsVegetablesNutsColzaWalnutOliveOilsValue(){
+    /**
+     * Get fruits vegetables nuts colza walnut olive oils value int.
+     *
+     * @return the int
+     */
+    public int getFruitsVegetablesNutsColzaWalnutOliveOilsValue(){
 		return fruitsVegetablesNutsColzaWalnutOliveOilsValue;
 	}
 
-	public int getSaturatedFatPoints(){
+    /**
+     * Get saturated fat points int.
+     *
+     * @return the int
+     */
+    public int getSaturatedFatPoints(){
 		return saturatedFatPoints;
 	}
 
-	public double getProteins(){
+    /**
+     * Get proteins double.
+     *
+     * @return the double
+     */
+    public double getProteins(){
 		return proteins;
 	}
 
-	public int getSodiumValue(){
+    /**
+     * Get sodium value int.
+     *
+     * @return the int
+     */
+    public int getSodiumValue(){
 		return sodiumValue;
 	}
 
-	public int getSaturatedFatRatioValue(){
+    /**
+     * Get saturated fat ratio value int.
+     *
+     * @return the int
+     */
+    public int getSaturatedFatRatioValue(){
 		return saturatedFatRatioValue;
 	}
 
-	public int getIsWater(){
+    /**
+     * Get is water int.
+     *
+     * @return the int
+     */
+    public int getIsWater(){
 		return isWater;
 	}
 
-	public int getEnergy(){
+    /**
+     * Get energy int.
+     *
+     * @return the int
+     */
+    public int getEnergy(){
 		return energy;
 	}
 
-	public double getFiber(){
+    /**
+     * Get fiber double.
+     *
+     * @return the double
+     */
+    public double getFiber(){
 		return fiber;
 	}
 
-	public int getNegativePoints(){
+    /**
+     * Get negative points int.
+     *
+     * @return the int
+     */
+    public int getNegativePoints(){
 		return negativePoints;
 	}
 
-	public double getSugars(){
+    /**
+     * Get sugars double.
+     *
+     * @return the double
+     */
+    public double getSugars(){
 		return sugars;
 	}
 
-	public int getProteinsPoints(){
+    /**
+     * Get proteins points int.
+     *
+     * @return the int
+     */
+    public int getProteinsPoints(){
 		return proteinsPoints;
 	}
 
-	public int getFruitsVegetablesNutsColzaWalnutOliveOilsPoints(){
+    /**
+     * Get fruits vegetables nuts colza walnut olive oils points int.
+     *
+     * @return the int
+     */
+    public int getFruitsVegetablesNutsColzaWalnutOliveOilsPoints(){
 		return fruitsVegetablesNutsColzaWalnutOliveOilsPoints;
 	}
 
-	public double getSugarsValue(){
+    /**
+     * Get sugars value double.
+     *
+     * @return the double
+     */
+    public double getSugarsValue(){
 		return sugarsValue;
 	}
 
-	public int getIsFat(){
+    /**
+     * Get is fat int.
+     *
+     * @return the int
+     */
+    public int getIsFat(){
 		return isFat;
 	}
 
-	public int getIsBeverage(){
+    /**
+     * Get is beverage int.
+     *
+     * @return the int
+     */
+    public int getIsBeverage(){
 		return isBeverage;
 	}
 
-	public double getSaturatedFat(){
+    /**
+     * Get saturated fat double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFat(){
 		return saturatedFat;
 	}
 
-	public int getFruitsVegetablesNutsColzaWalnutOliveOils(){
+    /**
+     * Get fruits vegetables nuts colza walnut olive oils int.
+     *
+     * @return the int
+     */
+    public int getFruitsVegetablesNutsColzaWalnutOliveOils(){
 		return fruitsVegetablesNutsColzaWalnutOliveOils;
 	}
 
-	public int getSodium(){
+    /**
+     * Get sodium int.
+     *
+     * @return the int
+     */
+    public int getSodium(){
 		return sodium;
 	}
 
-	public int getEnergyPoints(){
+    /**
+     * Get energy points int.
+     *
+     * @return the int
+     */
+    public int getEnergyPoints(){
 		return energyPoints;
 	}
 
-	public int getSodiumPoints(){
+    /**
+     * Get sodium points int.
+     *
+     * @return the int
+     */
+    public int getSodiumPoints(){
 		return sodiumPoints;
 	}
 
-	public String getGrade(){
+    /**
+     * Get grade string.
+     *
+     * @return the string
+     */
+    public String getGrade(){
 		return grade;
 	}
 
-	public int getEnergyValue(){
+    /**
+     * Get energy value int.
+     *
+     * @return the int
+     */
+    public int getEnergyValue(){
 		return energyValue;
 	}
 
-	public int getSaturatedFatRatioPoints(){
+    /**
+     * Get saturated fat ratio points int.
+     *
+     * @return the int
+     */
+    public int getSaturatedFatRatioPoints(){
 		return saturatedFatRatioPoints;
 	}
 }

@@ -2,12 +2,20 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Thumb.
+ */
 public class Thumb{
 
 	@JsonProperty("en")
 	private String en;
 
-	public String getEn(){
+    /**
+     * Get en string.
+     *
+     * @return the string
+     */
+    public String getEn(){
 		return en;
 	}
 }

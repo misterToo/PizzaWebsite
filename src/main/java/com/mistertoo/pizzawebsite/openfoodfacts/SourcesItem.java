@@ -3,6 +3,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Sources item.
+ */
 public class SourcesItem{
 
 	@JsonProperty("images")
@@ -26,31 +29,66 @@ public class SourcesItem{
 	@JsonProperty("manufacturer")
 	private Object manufacturer;
 
-	public List<Object> getImages(){
+    /**
+     * Get images list.
+     *
+     * @return the list
+     */
+    public List<Object> getImages(){
 		return images;
 	}
 
-	public String getName(){
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
+    public String getName(){
 		return name;
 	}
 
-	public int getImportT(){
+    /**
+     * Get import t int.
+     *
+     * @return the int
+     */
+    public int getImportT(){
 		return importT;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public List<String> getFields(){
+    /**
+     * Get fields list.
+     *
+     * @return the list
+     */
+    public List<String> getFields(){
 		return fields;
 	}
 
-	public String getUrl(){
+    /**
+     * Get url string.
+     *
+     * @return the string
+     */
+    public String getUrl(){
 		return url;
 	}
 
-	public Object getManufacturer(){
+    /**
+     * Get manufacturer object.
+     *
+     * @return the object
+     */
+    public Object getManufacturer(){
 		return manufacturer;
 	}
 }

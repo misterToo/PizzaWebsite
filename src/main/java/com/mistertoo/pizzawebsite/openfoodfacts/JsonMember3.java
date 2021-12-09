@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Json member 3.
+ */
 public class JsonMember3{
 
 	@JsonProperty("sizes")
@@ -13,15 +16,30 @@ public class JsonMember3{
 	@JsonProperty("uploaded_t")
 	private int uploadedT;
 
-	public Sizes getSizes(){
+    /**
+     * Get sizes sizes.
+     *
+     * @return the sizes
+     */
+    public Sizes getSizes(){
 		return sizes;
 	}
 
-	public String getUploader(){
+    /**
+     * Get uploader string.
+     *
+     * @return the string
+     */
+    public String getUploader(){
 		return uploader;
 	}
 
-	public int getUploadedT(){
+    /**
+     * Get uploaded t int.
+     *
+     * @return the int
+     */
+    public int getUploadedT(){
 		return uploadedT;
 	}
 }

@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Selected images.
+ */
 public class SelectedImages{
 
 	@JsonProperty("nutrition")
@@ -13,15 +16,30 @@ public class SelectedImages{
 	@JsonProperty("front")
 	private Front front;
 
-	public Nutrition getNutrition(){
+    /**
+     * Get nutrition nutrition.
+     *
+     * @return the nutrition
+     */
+    public Nutrition getNutrition(){
 		return nutrition;
 	}
 
-	public Ingredients getIngredients(){
+    /**
+     * Get ingredients ingredients.
+     *
+     * @return the ingredients
+     */
+    public Ingredients getIngredients(){
 		return ingredients;
 	}
 
-	public Front getFront(){
+    /**
+     * Get front front.
+     *
+     * @return the front
+     */
+    public Front getFront(){
 		return front;
 	}
 }

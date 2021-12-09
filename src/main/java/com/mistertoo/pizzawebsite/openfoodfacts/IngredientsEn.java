@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Ingredients en.
+ */
 public class IngredientsEn{
 
 	@JsonProperty("rev")
@@ -22,27 +25,57 @@ public class IngredientsEn{
 	@JsonProperty("geometry")
 	private String geometry;
 
-	public String getRev(){
+    /**
+     * Get rev string.
+     *
+     * @return the string
+     */
+    public String getRev(){
 		return rev;
 	}
 
-	public String getImgid(){
+    /**
+     * Get imgid string.
+     *
+     * @return the string
+     */
+    public String getImgid(){
 		return imgid;
 	}
 
-	public Sizes getSizes(){
+    /**
+     * Get sizes sizes.
+     *
+     * @return the sizes
+     */
+    public Sizes getSizes(){
 		return sizes;
 	}
 
-	public String getNormalize(){
+    /**
+     * Get normalize string.
+     *
+     * @return the string
+     */
+    public String getNormalize(){
 		return normalize;
 	}
 
-	public Object getWhiteMagic(){
+    /**
+     * Get white magic object.
+     *
+     * @return the object
+     */
+    public Object getWhiteMagic(){
 		return whiteMagic;
 	}
 
-	public String getGeometry(){
+    /**
+     * Get geometry string.
+     *
+     * @return the string
+     */
+    public String getGeometry(){
 		return geometry;
 	}
 }

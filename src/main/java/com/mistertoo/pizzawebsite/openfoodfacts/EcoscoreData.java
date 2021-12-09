@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Ecoscore data.
+ */
 public class EcoscoreData{
 
 	@JsonProperty("adjustments")
@@ -19,23 +22,48 @@ public class EcoscoreData{
 	@JsonProperty("status")
 	private String status;
 
-	public Adjustments getAdjustments(){
+    /**
+     * Get adjustments adjustments.
+     *
+     * @return the adjustments
+     */
+    public Adjustments getAdjustments(){
 		return adjustments;
 	}
 
-	public Missing getMissing(){
+    /**
+     * Get missing missing.
+     *
+     * @return the missing
+     */
+    public Missing getMissing(){
 		return missing;
 	}
 
-	public int getMissingAgribalyseMatchWarning(){
+    /**
+     * Get missing agribalyse match warning int.
+     *
+     * @return the int
+     */
+    public int getMissingAgribalyseMatchWarning(){
 		return missingAgribalyseMatchWarning;
 	}
 
-	public Agribalyse getAgribalyse(){
+    /**
+     * Get agribalyse agribalyse.
+     *
+     * @return the agribalyse
+     */
+    public Agribalyse getAgribalyse(){
 		return agribalyse;
 	}
 
-	public String getStatus(){
+    /**
+     * Get status string.
+     *
+     * @return the string
+     */
+    public String getStatus(){
 		return status;
 	}
 }

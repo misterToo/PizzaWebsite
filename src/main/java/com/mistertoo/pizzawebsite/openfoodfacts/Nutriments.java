@@ -2,6 +2,9 @@ package com.mistertoo.pizzawebsite.openfoodfacts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Nutriments.
+ */
 public class Nutriments{
 
 	@JsonProperty("carbohydrates_100g")
@@ -262,347 +265,777 @@ public class Nutriments{
 	@JsonProperty("energy-kcal")
 	private int energyKcal;
 
-	public double getCarbohydrates100g(){
+    /**
+     * Get carbohydrates 100 g double.
+     *
+     * @return the double
+     */
+    public double getCarbohydrates100g(){
 		return carbohydrates100g;
 	}
 
-	public String getVitaminCUnit(){
+    /**
+     * Get vitamin c unit string.
+     *
+     * @return the string
+     */
+    public String getVitaminCUnit(){
 		return vitaminCUnit;
 	}
 
-	public double getSaturatedFatValue(){
+    /**
+     * Get saturated fat value double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFatValue(){
 		return saturatedFatValue;
 	}
 
-	public double getSaturatedFat(){
+    /**
+     * Get saturated fat double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFat(){
 		return saturatedFat;
 	}
 
-	public int getProteinsServing(){
+    /**
+     * Get proteins serving int.
+     *
+     * @return the int
+     */
+    public int getProteinsServing(){
 		return proteinsServing;
 	}
 
-	public int getEnergy100g(){
+    /**
+     * Get energy 100 g int.
+     *
+     * @return the int
+     */
+    public int getEnergy100g(){
 		return energy100g;
 	}
 
-	public double getProteins100g(){
+    /**
+     * Get proteins 100 g double.
+     *
+     * @return the double
+     */
+    public double getProteins100g(){
 		return proteins100g;
 	}
 
-	public int getCalciumValue(){
+    /**
+     * Get calcium value int.
+     *
+     * @return the int
+     */
+    public int getCalciumValue(){
 		return calciumValue;
 	}
 
-	public double getFat(){
+    /**
+     * Get fat double.
+     *
+     * @return the double
+     */
+    public double getFat(){
 		return fat;
 	}
 
-	public int getCholesterol(){
+    /**
+     * Get cholesterol int.
+     *
+     * @return the int
+     */
+    public int getCholesterol(){
 		return cholesterol;
 	}
 
-	public int getSodiumValue(){
+    /**
+     * Get sodium value int.
+     *
+     * @return the int
+     */
+    public int getSodiumValue(){
 		return sodiumValue;
 	}
 
-	public double getCalcium100g(){
+    /**
+     * Get calcium 100 g double.
+     *
+     * @return the double
+     */
+    public double getCalcium100g(){
 		return calcium100g;
 	}
 
-	public int getEnergy(){
+    /**
+     * Get energy int.
+     *
+     * @return the int
+     */
+    public int getEnergy(){
 		return energy;
 	}
 
-	public double getIron100g(){
+    /**
+     * Get iron 100 g double.
+     *
+     * @return the double
+     */
+    public double getIron100g(){
 		return iron100g;
 	}
 
-	public String getSodiumUnit(){
+    /**
+     * Get sodium unit string.
+     *
+     * @return the string
+     */
+    public String getSodiumUnit(){
 		return sodiumUnit;
 	}
 
-	public double getCarbohydrates(){
+    /**
+     * Get carbohydrates double.
+     *
+     * @return the double
+     */
+    public double getCarbohydrates(){
 		return carbohydrates;
 	}
 
-	public String getFiberUnit(){
+    /**
+     * Get fiber unit string.
+     *
+     * @return the string
+     */
+    public String getFiberUnit(){
 		return fiberUnit;
 	}
 
-	public int getSugarsServing(){
+    /**
+     * Get sugars serving int.
+     *
+     * @return the int
+     */
+    public int getSugarsServing(){
 		return sugarsServing;
 	}
 
-	public int getVitaminCServing(){
+    /**
+     * Get vitamin c serving int.
+     *
+     * @return the int
+     */
+    public int getVitaminCServing(){
 		return vitaminCServing;
 	}
 
-	public double getFiber(){
+    /**
+     * Get fiber double.
+     *
+     * @return the double
+     */
+    public double getFiber(){
 		return fiber;
 	}
 
-	public double getSugars(){
+    /**
+     * Get sugars double.
+     *
+     * @return the double
+     */
+    public double getSugars(){
 		return sugars;
 	}
 
-	public double getSugars100g(){
+    /**
+     * Get sugars 100 g double.
+     *
+     * @return the double
+     */
+    public double getSugars100g(){
 		return sugars100g;
 	}
 
-	public String getTransFatUnit(){
+    /**
+     * Get trans fat unit string.
+     *
+     * @return the string
+     */
+    public String getTransFatUnit(){
 		return transFatUnit;
 	}
 
-	public int getEnergyServing(){
+    /**
+     * Get energy serving int.
+     *
+     * @return the int
+     */
+    public int getEnergyServing(){
 		return energyServing;
 	}
 
-	public double getCalciumServing(){
+    /**
+     * Get calcium serving double.
+     *
+     * @return the double
+     */
+    public double getCalciumServing(){
 		return calciumServing;
 	}
 
-	public int getCarbohydratesServing(){
+    /**
+     * Get carbohydrates serving int.
+     *
+     * @return the int
+     */
+    public int getCarbohydratesServing(){
 		return carbohydratesServing;
 	}
 
-	public double getSalt100g(){
+    /**
+     * Get salt 100 g double.
+     *
+     * @return the double
+     */
+    public double getSalt100g(){
 		return salt100g;
 	}
 
-	public int getTransFat100g(){
+    /**
+     * Get trans fat 100 g int.
+     *
+     * @return the int
+     */
+    public int getTransFat100g(){
 		return transFat100g;
 	}
 
-	public double getSodiumServing(){
+    /**
+     * Get sodium serving double.
+     *
+     * @return the double
+     */
+    public double getSodiumServing(){
 		return sodiumServing;
 	}
 
-	public int getVitaminCValue(){
+    /**
+     * Get vitamin c value int.
+     *
+     * @return the int
+     */
+    public int getVitaminCValue(){
 		return vitaminCValue;
 	}
 
-	public int getFatServing(){
+    /**
+     * Get fat serving int.
+     *
+     * @return the int
+     */
+    public int getFatServing(){
 		return fatServing;
 	}
 
-	public double getSodium(){
+    /**
+     * Get sodium double.
+     *
+     * @return the double
+     */
+    public double getSodium(){
 		return sodium;
 	}
 
-	public String getFatUnit(){
+    /**
+     * Get fat unit string.
+     *
+     * @return the string
+     */
+    public String getFatUnit(){
 		return fatUnit;
 	}
 
-	public double getVitaminA(){
+    /**
+     * Get vitamin a double.
+     *
+     * @return the double
+     */
+    public double getVitaminA(){
 		return vitaminA;
 	}
 
-	public double getVitaminAServing(){
+    /**
+     * Get vitamin a serving double.
+     *
+     * @return the double
+     */
+    public double getVitaminAServing(){
 		return vitaminAServing;
 	}
 
-	public int getVitaminC(){
+    /**
+     * Get vitamin c int.
+     *
+     * @return the int
+     */
+    public int getVitaminC(){
 		return vitaminC;
 	}
 
-	public int getCholesterolServing(){
+    /**
+     * Get cholesterol serving int.
+     *
+     * @return the int
+     */
+    public int getCholesterolServing(){
 		return cholesterolServing;
 	}
 
-	public int getNovaGroup100g(){
+    /**
+     * Get nova group 100 g int.
+     *
+     * @return the int
+     */
+    public int getNovaGroup100g(){
 		return novaGroup100g;
 	}
 
-	public double getCarbohydratesValue(){
+    /**
+     * Get carbohydrates value double.
+     *
+     * @return the double
+     */
+    public double getCarbohydratesValue(){
 		return carbohydratesValue;
 	}
 
-	public double getFiber100g(){
+    /**
+     * Get fiber 100 g double.
+     *
+     * @return the double
+     */
+    public double getFiber100g(){
 		return fiber100g;
 	}
 
-	public String getCalciumUnit(){
+    /**
+     * Get calcium unit string.
+     *
+     * @return the string
+     */
+    public String getCalciumUnit(){
 		return calciumUnit;
 	}
 
-	public double getFat100g(){
+    /**
+     * Get fat 100 g double.
+     *
+     * @return the double
+     */
+    public double getFat100g(){
 		return fat100g;
 	}
 
-	public String getProteinsUnit(){
+    /**
+     * Get proteins unit string.
+     *
+     * @return the string
+     */
+    public String getProteinsUnit(){
 		return proteinsUnit;
 	}
 
-	public int getCholesterolValue(){
+    /**
+     * Get cholesterol value int.
+     *
+     * @return the int
+     */
+    public int getCholesterolValue(){
 		return cholesterolValue;
 	}
 
-	public String getEnergyUnit(){
+    /**
+     * Get energy unit string.
+     *
+     * @return the string
+     */
+    public String getEnergyUnit(){
 		return energyUnit;
 	}
 
-	public double getProteinsValue(){
+    /**
+     * Get proteins value double.
+     *
+     * @return the double
+     */
+    public double getProteinsValue(){
 		return proteinsValue;
 	}
 
-	public int getEnergyKcalServing(){
+    /**
+     * Get energy kcal serving int.
+     *
+     * @return the int
+     */
+    public int getEnergyKcalServing(){
 		return energyKcalServing;
 	}
 
-	public double getFiberValue(){
+    /**
+     * Get fiber value double.
+     *
+     * @return the double
+     */
+    public double getFiberValue(){
 		return fiberValue;
 	}
 
-	public String getIronUnit(){
+    /**
+     * Get iron unit string.
+     *
+     * @return the string
+     */
+    public String getIronUnit(){
 		return ironUnit;
 	}
 
-	public double getIronValue(){
+    /**
+     * Get iron value double.
+     *
+     * @return the double
+     */
+    public double getIronValue(){
 		return ironValue;
 	}
 
-	public int getSaltValue(){
+    /**
+     * Get salt value int.
+     *
+     * @return the int
+     */
+    public int getSaltValue(){
 		return saltValue;
 	}
 
-	public int getTransFat(){
+    /**
+     * Get trans fat int.
+     *
+     * @return the int
+     */
+    public int getTransFat(){
 		return transFat;
 	}
 
-	public double getIronServing(){
+    /**
+     * Get iron serving double.
+     *
+     * @return the double
+     */
+    public double getIronServing(){
 		return ironServing;
 	}
 
-	public double getProteins(){
+    /**
+     * Get proteins double.
+     *
+     * @return the double
+     */
+    public double getProteins(){
 		return proteins;
 	}
 
-	public int getEnergyKcalValue(){
+    /**
+     * Get energy kcal value int.
+     *
+     * @return the int
+     */
+    public int getEnergyKcalValue(){
 		return energyKcalValue;
 	}
 
-	public String getSaltUnit(){
+    /**
+     * Get salt unit string.
+     *
+     * @return the string
+     */
+    public String getSaltUnit(){
 		return saltUnit;
 	}
 
-	public String getSaturatedFatUnit(){
+    /**
+     * Get saturated fat unit string.
+     *
+     * @return the string
+     */
+    public String getSaturatedFatUnit(){
 		return saturatedFatUnit;
 	}
 
-	public String getSugarsUnit(){
+    /**
+     * Get sugars unit string.
+     *
+     * @return the string
+     */
+    public String getSugarsUnit(){
 		return sugarsUnit;
 	}
 
-	public int getVitaminC100g(){
+    /**
+     * Get vitamin c 100 g int.
+     *
+     * @return the int
+     */
+    public int getVitaminC100g(){
 		return vitaminC100g;
 	}
 
-	public double getFiberServing(){
+    /**
+     * Get fiber serving double.
+     *
+     * @return the double
+     */
+    public double getFiberServing(){
 		return fiberServing;
 	}
 
-	public int getNutritionScoreFr(){
+    /**
+     * Get nutrition score fr int.
+     *
+     * @return the int
+     */
+    public int getNutritionScoreFr(){
 		return nutritionScoreFr;
 	}
 
-	public double getSaturatedFatServing(){
+    /**
+     * Get saturated fat serving double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFatServing(){
 		return saturatedFatServing;
 	}
 
-	public int getFruitsVegetablesNutsEstimateFromIngredients100g(){
+    /**
+     * Get fruits vegetables nuts estimate from ingredients 100 g int.
+     *
+     * @return the int
+     */
+    public int getFruitsVegetablesNutsEstimateFromIngredients100g(){
 		return fruitsVegetablesNutsEstimateFromIngredients100g;
 	}
 
-	public double getCalcium(){
+    /**
+     * Get calcium double.
+     *
+     * @return the double
+     */
+    public double getCalcium(){
 		return calcium;
 	}
 
-	public double getSalt(){
+    /**
+     * Get salt double.
+     *
+     * @return the double
+     */
+    public double getSalt(){
 		return salt;
 	}
 
-	public double getSaltServing(){
+    /**
+     * Get salt serving double.
+     *
+     * @return the double
+     */
+    public double getSaltServing(){
 		return saltServing;
 	}
 
-	public double getSugarsValue(){
+    /**
+     * Get sugars value double.
+     *
+     * @return the double
+     */
+    public double getSugarsValue(){
 		return sugarsValue;
 	}
 
-	public int getTransFatValue(){
+    /**
+     * Get trans fat value int.
+     *
+     * @return the int
+     */
+    public int getTransFatValue(){
 		return transFatValue;
 	}
 
-	public int getNovaGroupServing(){
+    /**
+     * Get nova group serving int.
+     *
+     * @return the int
+     */
+    public int getNovaGroupServing(){
 		return novaGroupServing;
 	}
 
-	public int getNutritionScoreFr100g(){
+    /**
+     * Get nutrition score fr 100 g int.
+     *
+     * @return the int
+     */
+    public int getNutritionScoreFr100g(){
 		return nutritionScoreFr100g;
 	}
 
-	public double getVitaminA100g(){
+    /**
+     * Get vitamin a 100 g double.
+     *
+     * @return the double
+     */
+    public double getVitaminA100g(){
 		return vitaminA100g;
 	}
 
-	public int getCholesterol100g(){
+    /**
+     * Get cholesterol 100 g int.
+     *
+     * @return the int
+     */
+    public int getCholesterol100g(){
 		return cholesterol100g;
 	}
 
-	public double getSodium100g(){
+    /**
+     * Get sodium 100 g double.
+     *
+     * @return the double
+     */
+    public double getSodium100g(){
 		return sodium100g;
 	}
 
-	public String getEnergyKcalUnit(){
+    /**
+     * Get energy kcal unit string.
+     *
+     * @return the string
+     */
+    public String getEnergyKcalUnit(){
 		return energyKcalUnit;
 	}
 
-	public double getSaturatedFat100g(){
+    /**
+     * Get saturated fat 100 g double.
+     *
+     * @return the double
+     */
+    public double getSaturatedFat100g(){
 		return saturatedFat100g;
 	}
 
-	public int getNovaGroup(){
+    /**
+     * Get nova group int.
+     *
+     * @return the int
+     */
+    public int getNovaGroup(){
 		return novaGroup;
 	}
 
-	public int getVitaminAValue(){
+    /**
+     * Get vitamin a value int.
+     *
+     * @return the int
+     */
+    public int getVitaminAValue(){
 		return vitaminAValue;
 	}
 
-	public String getCholesterolUnit(){
+    /**
+     * Get cholesterol unit string.
+     *
+     * @return the string
+     */
+    public String getCholesterolUnit(){
 		return cholesterolUnit;
 	}
 
-	public int getEnergyValue(){
+    /**
+     * Get energy value int.
+     *
+     * @return the int
+     */
+    public int getEnergyValue(){
 		return energyValue;
 	}
 
-	public double getFatValue(){
+    /**
+     * Get fat value double.
+     *
+     * @return the double
+     */
+    public double getFatValue(){
 		return fatValue;
 	}
 
-	public double getIron(){
+    /**
+     * Get iron double.
+     *
+     * @return the double
+     */
+    public double getIron(){
 		return iron;
 	}
 
-	public String getVitaminAUnit(){
+    /**
+     * Get vitamin a unit string.
+     *
+     * @return the string
+     */
+    public String getVitaminAUnit(){
 		return vitaminAUnit;
 	}
 
-	public int getEnergyKcal100g(){
+    /**
+     * Get energy kcal 100 g int.
+     *
+     * @return the int
+     */
+    public int getEnergyKcal100g(){
 		return energyKcal100g;
 	}
 
-	public int getTransFatServing(){
+    /**
+     * Get trans fat serving int.
+     *
+     * @return the int
+     */
+    public int getTransFatServing(){
 		return transFatServing;
 	}
 
-	public String getCarbohydratesUnit(){
+    /**
+     * Get carbohydrates unit string.
+     *
+     * @return the string
+     */
+    public String getCarbohydratesUnit(){
 		return carbohydratesUnit;
 	}
 
-	public int getEnergyKcal(){
+    /**
+     * Get energy kcal int.
+     *
+     * @return the int
+     */
+    public int getEnergyKcal(){
 		return energyKcal;
 	}
 }
