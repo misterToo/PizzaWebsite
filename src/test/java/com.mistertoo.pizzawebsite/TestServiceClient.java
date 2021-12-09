@@ -1,12 +1,13 @@
 package com.mistertoo.pizzawebsite;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mistertoo.pizzawebsite.entity.Nutriments;
+import com.mistertoo.pizzawebsite.openfoodfacts.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -20,8 +21,9 @@ public class TestServiceClient {
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        logger.debug(response);
+        Response response2 = mapper.readValue(response,Response.class);
+        assertEquals(385, response2.getProduct().getNutriments().getEnergyKcal());
 
-        Nutriments nutriments = mapper.readValue(response,Nutriments.class);
-        assertEquals(0, nutriments.getEnergyKcal());
     }
 }

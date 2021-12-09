@@ -4,14 +4,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mistertoo.pizzawebsite.entity.Customer;
-import com.mistertoo.pizzawebsite.entity.Nutriments;
 import com.mistertoo.pizzawebsite.entity.Order;
+import com.mistertoo.pizzawebsite.openfoodfacts.Response;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
-import com.sun.xml.bind.v2.runtime.reflect.opt.Const;
-import jdk.jfr.StackTrace;
+import com.mistertoo.pizzawebsite.util.PropertiesLoader;
+import com.oracle.wls.shaded.org.apache.regexp.RE;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.glassfish.jersey.internal.inject.Custom;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,14 +38,22 @@ import java.util.*;
         urlPatterns = {"/placeOrder"}
 )
 
-public class placeOrder extends HttpServlet{
+public class placeOrder extends HttpServlet implements PropertiesLoader{
+    private final Logger logger = LogManager.getLogger(this.getClass());
+    GenericDao<Order> orderDao = new GenericDao<>(Order.class);
+    GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+    Properties foodProperties;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        loadProperties();
+    }
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         //Create utilities
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
-        Logger logger = LogManager.getLogger(this.getClass());
-        GenericDao<Order> orderDao = new GenericDao<>(Order.class);
-        GenericDao<Customer> customerDAO = new GenericDao<>(Customer.class);
+
 
         //get form data
         boolean pickup;
@@ -71,14 +78,6 @@ public class placeOrder extends HttpServlet{
         int calories = 0;
         int price = 0;
 
-        //set vars for API calorie query
-        String pepperoniID = "5052004649513";
-        String mushroomID ="3222471027325";
-        String onionID ="20242305";
-        String oliveID ="0053800950020";
-        String sausageID ="07203660021";
-        logger.debug(toppings.toString());
-
 
         //Get current customer from session
         HttpSession session = req.getSession(false);
@@ -87,13 +86,18 @@ public class placeOrder extends HttpServlet{
         propertyMap.put("uName", userName);
         Customer orderCustomer = customerDAO.findByPropertyEqual(propertyMap).get(0);
 
-        //calculate price
+        //calculate price and pizza dough calories
+        Client client = ClientBuilder.newClient();
+        int doughCalories = getKcal(foodProperties.getProperty("doughID"),client);
         if(Objects.equals(size, "small")){
+            calories += (doughCalories * .75);
             price += 8;
         } else if (Objects.equals(size, "medium")){
             price += 10;
+            calories += doughCalories;
         } else if (Objects.equals(size, "large")){
             price += 11;
+            calories += (doughCalories * 1.25);
         }
 
         if(!pickup){
@@ -140,26 +144,26 @@ public class placeOrder extends HttpServlet{
         //get topping calorie values from API
 
         if(toppings.contains("Sausage")){
-            Client client = ClientBuilder.newClient();
-            calories += getKcal(sausageID, client);
+            client = ClientBuilder.newClient();
+            calories += getKcal(foodProperties.getProperty("sausageID"), client);
 
         }
         if(toppings.contains("pepperoni")){
-            Client client = ClientBuilder.newClient();
-            calories += getKcal(pepperoniID,client);
+            client = ClientBuilder.newClient();
+            calories += getKcal(foodProperties.getProperty("pepperoniID"),client);
 
         }
         if(toppings.contains("olives")){
-            Client client = ClientBuilder.newClient();
-            calories += getKcal(oliveID,client);
+            client = ClientBuilder.newClient();
+            calories += getKcal(foodProperties.getProperty("oliveID"),client);
         }
         if(toppings.contains("onions")){
-            Client client = ClientBuilder.newClient();
-            calories += getKcal(onionID,client);
+            client = ClientBuilder.newClient();
+            calories += getKcal(foodProperties.getProperty("onionID"),client);
         }
         if(toppings.contains("mushrooms")){
-            Client client = ClientBuilder.newClient();
-            calories += getKcal(mushroomID,client);
+            client = ClientBuilder.newClient();
+            calories += getKcal(foodProperties.getProperty("mushroomID"),client);
         }
 
 
@@ -182,8 +186,17 @@ public class placeOrder extends HttpServlet{
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        Nutriments nutriments = mapper.readValue(response,Nutriments.class);
-        estimatedCalories = nutriments.getEnergyKcal();
+        Response responseObj = mapper.readValue(response, Response.class);
+        estimatedCalories = responseObj.getProduct().getNutriments().getEnergyKcal();
         return estimatedCalories;
+    }
+    private void loadProperties() {
+        try {
+            foodProperties = loadProperties("apiIDs.properties");
+        }  catch (IOException ioException) {
+            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+        } catch (Exception e) {
+            logger.error("Error loading properties" + e.getMessage(), e);
+        }
     }
 }

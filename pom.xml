@@ -32,6 +32,7 @@
     <auth-version>3.4.1</auth-version>
     <commons-version>2.11.0</commons-version>
     <version.jakarta.el-api>4.0.0</version.jakarta.el-api>
+    <hibernate-validator-version>7.0.0.Final</hibernate-validator-version>
   </properties>
 
   <dependencies>
@@ -153,12 +154,12 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>7.0.0.Final</version>
+      <version>${hibernate-validator-version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator-annotation-processor</artifactId>
-      <version>7.0.0.Final</version>
+      <version>${hibernate-validator-version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish</groupId>
@@ -168,7 +169,7 @@
     <dependency>
       <groupId>org.hibernate.validator</groupId>
       <artifactId>hibernate-validator-cdi</artifactId>
-      <version>7.0.0.Final</version>
+      <version>${hibernate-validator-version}</version>
     </dependency>
   </dependencies>
 
