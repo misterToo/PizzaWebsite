@@ -74,3 +74,9 @@ functionality written, problems with API interfacing but the code is written for
 on account page. Generic DAO problem fixed so that it closes sessions. This is probably the most productive week I've
 had yet, the program is now starting to look like a program, you can navigate between pages seamlessly and log in an out
 without a hitch.
+
+### Week 15
+
+10 hours
+
+Added Logger statements, Fixed my API interfacing so that now works. 

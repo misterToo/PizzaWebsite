@@ -49,7 +49,6 @@ import java.util.stream.Collectors;
 @WebServlet(
         urlPatterns = {"/auth"}
 )
-// TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
@@ -84,10 +83,13 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //validator initialisation
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         String authCode = req.getParameter("code");
+        //array for AWS claims
         String[] returns = new String[2];
+        //Session for user vars
         HttpSession session = req.getSession(true);
         if (authCode == null) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("error.jsp");
@@ -101,6 +103,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 //add username to session and request
                 req.setAttribute("userName", returns[0]);
                 session.setAttribute("userName",returns[0]);
+
+                logger.info("Logging in user " + returns[0]);
 
                 //properties for database search
                 Map<String,Object> propertyMap = new HashMap<>();
@@ -188,7 +192,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String keyId = tokenHeader.getKid();
         String alg = tokenHeader.getAlg();
 
-        // todo pick proper key from the two - it just so happens that the first one works for my case
         // Use Key's N and E
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
@@ -200,8 +203,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException e) {
             logger.error("Invalid Key Error " + e.getMessage(), e);
+            return null;
         } catch (NoSuchAlgorithmException e) {
             logger.error("Algorithm Error " + e.getMessage(), e);
+            return null;
         }
 
         // get an algorithm instance

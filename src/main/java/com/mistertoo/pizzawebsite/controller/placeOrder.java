@@ -162,7 +162,13 @@ public class placeOrder extends HttpServlet implements PropertiesLoader{
             e.printStackTrace();
         }
 
-
+        logger.info("new order of size " + size +" With toppings " + allToppings);
+        if(pickup){
+            logger.info("order will be picked up");
+        }else{
+            logger.info("order delivering to " + address);
+        }
+        logger.info("Used $"+rewardsUsed + " in rewards");
         //insert order and customer
         orderDao.insert(newOrder);
         customerDAO.saveOrUpdate(orderCustomer);
