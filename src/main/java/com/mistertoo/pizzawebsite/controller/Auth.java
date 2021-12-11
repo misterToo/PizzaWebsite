@@ -9,12 +9,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mistertoo.pizzawebsite.auth.*;
 import com.mistertoo.pizzawebsite.entity.Address;
 import com.mistertoo.pizzawebsite.entity.Customer;
-import com.mistertoo.pizzawebsite.entity.Order;
 import com.mistertoo.pizzawebsite.persistence.GenericDao;
-import com.mistertoo.pizzawebsite.util.*;
+import com.mistertoo.pizzawebsite.util.PropertiesLoader;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.commons.io.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,10 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URI;
 import java.net.URL;
@@ -84,8 +81,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //validator initialisation
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
+        javax.validation.ValidatorFactory factory = javax.validation.Validation.buildDefaultValidatorFactory();
+        javax.validation.Validator validator = factory.getValidator();
         String authCode = req.getParameter("code");
         //array for AWS claims
         String[] returns = new String[2];
