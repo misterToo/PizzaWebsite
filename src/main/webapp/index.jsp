@@ -13,29 +13,29 @@
     <div class="row">
         <img src="images/pizza-lo-scarparielloda.jpg" class="col-md-5">
         <p class="col-md-7">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae tristique ipsum, quis hendrerit metus. Phasellus
-            sapien lacus, scelerisque a erat a, vestibulum volutpat ligula. Vestibulum volutpat justo tempor turpis consequat
-            efficitur. Integer nec aliquam nisi. Cras blandit, lorem nec pharetra vulputate, metus metus gravida nisi, nec
-            tincidunt urna turpis vel sem. Curabitur accumsan sem sem, eget maximus magna commodo nec. Sed ornare arcu id
-            finibus euismod. Nulla pharetra id justo et fermentum. Nullam viverra nisl quis facilisis finibus. Sed finibus quam
-            eu malesuada semper. Vestibulum rhoncus, eros vitae tristique pretium, quam dolor pulvinar tellus, nec dapibus mi
-            turpis et turpis. Suspendisse vitae ex ullamcorper, commodo neque ut, volutpat odio. Maecenas bibendum lacus nibh,
-            vitae consequat elit viverra quis. Suspendisse in velit luctus, blandit velit imperdiet, sagittis justo. Donec ut
-            finibus lacus. Integer lacinia erat urna.
-
+            <br>
+            <br>
+            Welcome to Dave's Pizza, Home of the best Pizza in the Madison Area!<br>
+            For over 40 years, we have been serving this city with the best pizza money can buy,<br>
+            Offering just the essentials to those who appreciate it. Our dough is made from the finest<br>
+            00 flour, our sauce from the best imported tomatoes. All this to bring you the greatest<br>
+            pies this side of the mississippi. When we started this restaurant back in 1963, out goal was as humble as making<br>
+            pizza that someone else would enjoy, but our legend has grown throughout the region to become a sought-after <br>
+            treasure of a pizzeria.
         </p>
     </div>
     <div class="row">
         <p class="col-md-7">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae tristique ipsum, quis hendrerit metus. Phasellus
-            sapien lacus, scelerisque a erat a, vestibulum volutpat ligula. Vestibulum volutpat justo tempor turpis consequat
-            efficitur. Integer nec aliquam nisi. Cras blandit, lorem nec pharetra vulputate, metus metus gravida nisi, nec
-            tincidunt urna turpis vel sem. Curabitur accumsan sem sem, eget maximus magna commodo nec. Sed ornare arcu id
-            finibus euismod. Nulla pharetra id justo et fermentum. Nullam viverra nisl quis facilisis finibus. Sed finibus quam
-            eu malesuada semper. Vestibulum rhoncus, eros vitae tristique pretium, quam dolor pulvinar tellus, nec dapibus mi
-            turpis et turpis. Suspendisse vitae ex ullamcorper, commodo neque ut, volutpat odio. Maecenas bibendum lacus nibh,
-            vitae consequat elit viverra quis. Suspendisse in velit luctus, blandit velit imperdiet, sagittis justo. Donec ut
-            finibus lacus. Integer lacinia erat urna.
+            <br>
+            <br>
+            We have some BIG news!<br>
+            New toppings just in!<br>
+            try our fresh-cut ham, procured from the butcher's just down the street.<br>
+            As always, our meats are only of the highest quality, never frozen in order to preserve<br>
+            the flavor locked in them. Our sausage is cooked in-house, prepared every morning for one day only.<br>
+            With our proprietary blend of herbs and spices to bring out the best in the already-excellent meat.<br>
+            Our pepperoni is also of the highest quality, bringing only the most succulent spiced flavors to your pizza.<br>
+            place an order today to find out what makes our ingredients so special!.
 
         </p>
         <img src="images/ValentinasPizzeriaAndWineBar+(1).jpg" class="col-md-5">
